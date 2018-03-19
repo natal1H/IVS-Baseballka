@@ -1,1 +1,2 @@
-# IVS-proj2
+# IVS - Baseballka
+Second project for IVS created by team Baseballka.
