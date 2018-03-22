@@ -1,0 +1,23 @@
+IVS - Matematická knižnica - poznámky
+
+Čo má obsahovať?
+  - základné operácie (+, -, *, /)
+  - faktoriál
+  - umocňovanie s prirodzenými exponentami
+  - všeobecná odmocnina
+  - aspoň jednu ďalšiu funkciu: log ?
+  
+Knižnica musí obsahovať funkcie aj pre základné matematické operácie (+, -, *, /)
+
+Funkcie:
+  - double add(double number1, double number2);
+  - double substract(double number1, double number2);
+  - double multiply(double number1, double number2);
+  - double divide(double number1, double number2);
+  - int factorial(int number);
+  - double sqr(double number);
+  - double power(double number, int exp);
+  - double sqrt(double number);
+  - double genroot(double number, int root);
+  - double log10(double number);
+  - ???
