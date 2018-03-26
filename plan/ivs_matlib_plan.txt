@@ -16,7 +16,7 @@ Funkcie:
   - double subtract(double number1, double number2);
   - double multiply(double number1, double number2);
   - double divide(double number1, double number2);
-  - int factorial(int number);
+  - long factorial(int number);
   - double sqr(double number);
   - double power(double number, int exp);
   - double sqrt(double number);
