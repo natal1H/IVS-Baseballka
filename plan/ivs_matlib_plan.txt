@@ -9,9 +9,11 @@ IVS - Matematická knižnica - poznámky
   
 Knižnica musí obsahovať funkcie aj pre základné matematické operácie (+, -, *, /)
 
+Názov: ivs_matlib.cs
+
 Funkcie:
   - double add(double number1, double number2);
-  - double substract(double number1, double number2);
+  - double subtract(double number1, double number2);
   - double multiply(double number1, double number2);
   - double divide(double number1, double number2);
   - int factorial(int number);
@@ -21,3 +23,7 @@ Funkcie:
   - double genroot(double number, int root);
   - double log10(double number);
   - ???
+
+Poznámky:
+  - riešiť ošetrenia chybových stavov priamo v knižnici?
+  - prepokladať, že sa funkcie volať v správnom tvare?
