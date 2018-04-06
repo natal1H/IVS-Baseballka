@@ -1,7 +1,7 @@
 /**
  * @date 30.3.2018 
  * 
- * @note .NET Framework 4.5.2
+ * @note .NET Framework v4.0
  * 
  * @bug Maximalne jedna matematicka operacia
  *      Mocniny, odmocnina, log neimplementovane
