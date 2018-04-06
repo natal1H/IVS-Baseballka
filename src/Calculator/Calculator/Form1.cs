@@ -22,12 +22,12 @@ using System.Windows.Forms;
 namespace Calculator
 {
 
-    public partial class Kalkulacka : Form
+    public partial class CalculatorGUI : Form
     {
         Double value = 0; 
         String operation = ""; //Ziadny operator
         bool operation_pressed = false; //Ziadna operacia
-        public Kalkulacka()
+        public CalculatorGUI()
         {
             InitializeComponent();
         }
