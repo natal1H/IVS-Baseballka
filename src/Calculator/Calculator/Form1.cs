@@ -1,5 +1,5 @@
 /**
- * @date 30.3.2018 
+ * @date 7.4.2018 
  * 
  * @note .NET Framework v4.0
  * 
@@ -8,6 +8,7 @@
  *      Neimplementovana desatinna ciarka:
  *         1)Je mozne vlozit nekonecne mnozsvo desatinnych ciarok(Prve zadanie cisla)
  *         2)result.Clear pri zadani ciarky
+ *         3)Pod operande nie je mozne zadat dva a viac ciferne cislo
  */
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ using System.Windows.Forms;
 
 namespace Calculator
 {
-
+    
     public partial class CalculatorGUI : Form
     {
         Double value = 0; 
@@ -81,17 +82,28 @@ namespace Calculator
             switch (operation)
             {
                 case "+":
-                    result.Text = (value + Double.Parse(result.Text)).ToString(); //Pretypovanie Double->String
+                    //value = (value + Double.Parse(result.Text)); //Pretypovanie Double->String
+                    value = MatLib.add(value, Double.Parse(result.Text)); //Pretypovanie Double->String
+                    result.Text = (value).ToString(); //Pretypovanie Double->String
                     break;
                 case "-":
-                    result.Text = (value - Double.Parse(result.Text)).ToString(); //Pretypovanie Double->String
+                    //value = (value - Double.Parse(result.Text)); //Pretypovanie Double->String
+                    value = MatLib.subtract(value, Double.Parse(result.Text)); //Pretypovanie Double->String
+                    result.Text = (value).ToString(); //Pretypovanie Double->String
                     break;
                 case "*":
-                    result.Text = (value * Double.Parse(result.Text)).ToString(); //Pretypovanie Double->String
+                    //value = (value * Double.Parse(result.Text)); //Pretypovanie Double->String
+                    value = MatLib.multiply(value, Double.Parse(result.Text)); //Pretypovanie Double->String
+                    result.Text = (value).ToString(); //Pretypovanie Double->String
                     break;
                 case "/":
-                    result.Text = (value / Double.Parse(result.Text)).ToString(); //Pretypovanie Double->String
+                    //value = (value / Double.Parse(result.Text)); //Pretypovanie Double->String
+                    value = MatLib.divide(value, Double.Parse(result.Text)); //Pretypovanie Double->String
+                    result.Text = (value).ToString(); //Pretypovanie Double->String
                     break;
+
+                    
+
             }
         }
 
