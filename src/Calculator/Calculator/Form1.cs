@@ -3,8 +3,7 @@
  * 
  * @note .NET Framework v4.0
  * 
- * @bug Maximalne jedna matematicka operacia
- *      Mocniny, odmocnina, log neimplementovane
+ * @bug Mocniny, odmocnina, log neimplementovane
  *      Neimplementovana desatinna ciarka:
  *         1)Je mozne vlozit nekonecne mnozsvo desatinnych ciarok(Prve zadanie cisla)
  *         2)result.Clear pri zadani ciarky
