@@ -74,6 +74,10 @@ namespace Calculator
          */
         public static double divide(double number1, double number2)
         {
+            if (number2 == 0)
+            {
+                throw new System.DivideByZeroException("Chyba! Nie je povolené deliť 0.");
+            }
             return number1 / number2;
         }
 

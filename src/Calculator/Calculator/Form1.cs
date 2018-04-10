@@ -8,6 +8,8 @@
  *         1)Je mozne vlozit nekonecne mnozsvo desatinnych ciarok(Prve zadanie cisla)
  *         2)result.Clear pri zadani ciarky
  *         3)Pod operande nie je mozne zadat dva a viac ciferne cislo
+ *         
+ *  @todo Pridať zachytenie výnimiek pri operáciach (delenie nulou apod)
  */
 using System;
 using System.Collections.Generic;
