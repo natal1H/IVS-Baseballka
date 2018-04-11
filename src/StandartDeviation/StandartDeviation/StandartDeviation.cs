@@ -5,6 +5,9 @@
  * @author Natália Holková (xholko02), Egor Shamardin (xshama00)
  * 
  * @note .NET Framework v4.0
+ * 
+ * @todo Nahradiť vzorec pre výpočet smerodajnej odchýlky druhým, ktorý je v zadaní
+ * @todo Poriadne doplniť komentáre
  */
 
 using System;
@@ -48,12 +51,23 @@ namespace StandartDeviation
          */
         public double GetArithmeticMean()
         {
-            double sum = 0;
+            double res = 0, sum = 0;
             for (int i = 0; i < N; i++)
             {
                 sum = MatLib.add(sum, list[i]);
             }
-            return MatLib.divide(sum, N);
+            try
+            {
+                res = MatLib.divide(sum, N);
+            }
+            catch (DivideByZeroException e)
+            {
+                Console.WriteLine("{0}", e.Message);
+                Console.WriteLine("Press any key to continue . . .");
+                Console.Read();
+                Environment.Exit(-1);
+            }
+            return res;
         }
 
         public double GetArithmeticMeanOfFirstX(int X)
@@ -89,9 +103,22 @@ namespace StandartDeviation
         public double GetStandartDeviation()
         {
             double tmp = GetSpecialSum();
-            tmp = MatLib.divide(tmp, N - 1);
+
+            try
+            {
+                tmp = MatLib.divide(tmp, N - 1);
+            }
+            catch (DivideByZeroException e)
+            {
+                Console.WriteLine("{0}", e.Message);
+                Console.WriteLine("Press any key to continue . . .");
+                Console.Read();
+                Environment.Exit(-1);
+            }
+
             tmp = MatLib.sqrt(tmp);
             return tmp;
         }
     }
 }
+/*** Koniec súboru StandartDeviation.cs ***/
