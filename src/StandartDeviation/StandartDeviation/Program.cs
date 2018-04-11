@@ -23,6 +23,8 @@ namespace StandartDeviation
             StandartDeviation s = new StandartDeviation(list);
             Console.WriteLine("Počet prvkov: {0}", s.GetN());
             Console.WriteLine("Aritmetický priemer prvkov: {0}", s.GetArithmeticMean());
+            Console.WriteLine("Special sum: {0}", s.GetSpecialSum());
+            Console.WriteLine("Smerodajná odchýlka: {0}", s.GetStandartDeviation());
 
             Console.WriteLine("Press any key to continue . . .");
             Console.Read();

@@ -50,5 +50,38 @@ namespace StandartDeviation
             }
             return MatLib.divide(sum, N);
         }
+
+        public double GetArithmeticMeanOfFirstX(int X)
+        {
+            double sum = 0;
+            for (int i = 0; i < X; i++)
+            {
+                sum = MatLib.add(sum, list[i]);
+            }
+            return MatLib.divide(sum, X);
+        }
+
+        /**
+         * @todo Počíta podĺa zlého vzorca, opraviť (nie je to podĺa toho v zadaní)
+         */
+        public double GetSpecialSum()
+        {
+            double sum = 0;
+            double arit_mean = GetArithmeticMean(); // tmp = N * arit_mean(x)^2
+            for (int i = 0; i < N; i++)
+            {
+                double tmp = MatLib.square( MatLib.subtract(list[i], arit_mean) ); // tmp2 = X[i]^2
+                sum = MatLib.add(sum, tmp);
+            }
+            return sum;
+        }
+
+        public double GetStandartDeviation()
+        {
+            double tmp = GetSpecialSum();
+            tmp = MatLib.divide(tmp, N - 1);
+            tmp = MatLib.sqrt(tmp);
+            return tmp;
+        }
     }
 }
