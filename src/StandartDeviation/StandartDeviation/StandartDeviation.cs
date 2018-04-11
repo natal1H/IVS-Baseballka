@@ -41,6 +41,11 @@ namespace StandartDeviation
             return N;
         }
 
+        /**
+         * @brief Výpočet aritmetického priemeru
+         * 
+         * @todo Možno bude zbytočná po prejdení na druhý vzorec
+         */
         public double GetArithmeticMean()
         {
             double sum = 0;
@@ -76,6 +81,11 @@ namespace StandartDeviation
             return sum;
         }
 
+        /**
+         * @brief Výpočet smerodajnej odchýlky
+         * 
+         * @return smerodajná odchýlka
+         */
         public double GetStandartDeviation()
         {
             double tmp = GetSpecialSum();
