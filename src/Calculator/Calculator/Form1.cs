@@ -1,16 +1,12 @@
 /**
- * @date 7.4.2018 
+ * @date 12.4.2018 
  * 
  * @note .NET Framework v4.0
  * 
- * @bug Mocniny, odmocnina, log neimplementovane
- *      Neimplementovana desatinna ciarka:
- *         1)Je mozne vlozit nekonecne mnozsvo desatinnych ciarok(Prve zadanie cisla)
- *         2)result.Clear pri zadani ciarky
- *         3)Pod operande nie je mozne zadat dva a viac ciferne cislo
- *         
- *  @todo Pridať zachytenie výnimiek pri operáciach (delenie nulou apod)
+ * @bug Mocniny, odmocnina, log neimplementovane   
+ * @todo Pridať zachytenie výnimiek pri operáciach (delenie nulou apod)
  */
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,6 +25,7 @@ namespace Calculator
         Double value = 0; 
         String operation = ""; //Ziadny operator
         bool operation_pressed = false; //Ziadna operacia
+        bool number_pressed = false;
         public CalculatorGUI()
         {
             InitializeComponent();
@@ -47,12 +44,32 @@ namespace Calculator
              * (operation_pressed) -> Zmaze cislo pri zadavani dalsieho s mat. operaciou
              * Priklad: "'356' '+' '356211'" -> "'356' '+' '211'"
              */
-            if ((result.Text == "0") || (operation_pressed)) {
-                result.Clear();
+            if ((result.Text == "0") || (operation_pressed )) {
+                result.Clear(); //Zmaze cislo po zadani operacie
+                operation_pressed = false; //Dalsie cislo nezmazat -> Nepotrebny udaj -> False
             }
 
             Button Button_Name = (Button)sender;
-            result.Text = result.Text + Button_Name.Text; // Vystup vysledku na result.Text
+
+            if (Button_Name.Text == ",")
+            {
+                if (!result.Text.Contains(","))
+                {
+                    if (result.Text == "0") // if ak je prva zadana desatinna ciarka -> pre cisla ako 0,1
+                    {
+                        result.Text = result.Text + Button_Name.Text; // Vystup vysledku na result.Text
+                    }
+                    else
+                    {
+                        result.Text = "0"; //Zadanie nuly pred desatinnu ciarku
+                        result.Text = result.Text + Button_Name.Text; // Vystup vysledku na result.Text
+                    }
+                }
+            }
+            else {
+                result.Text = result.Text + Button_Name.Text;
+            }
+            number_pressed = true;
         }
 
         /**
@@ -61,6 +78,9 @@ namespace Calculator
         private void Button_CE_Click(object sender, EventArgs e)
         {
             result.Text = "0";
+            value = 0;
+            number_pressed = false;
+            operation_pressed = false;
         }
 
         /**
@@ -68,10 +88,41 @@ namespace Calculator
          */ 
         private void Operator_click(object sender, EventArgs e)
         {
+            if (number_pressed == true) {
+
+                // TODO Zlucenie s Button_equals_Click?
+                
+                switch (operation)
+                {
+                    case "+":
+                        //value = (value + Double.Parse(result.Text)); //Pretypovanie Double->String
+                        value = MatLib.add(value, Double.Parse(result.Text)); //Pretypovanie Double->String
+                        result.Text = (value).ToString(); //Pretypovanie Double->String
+                        break;
+                    case "-":
+                        //value = (value - Double.Parse(result.Text)); //Pretypovanie Double->String
+                        value = MatLib.subtract(value, Double.Parse(result.Text)); //Pretypovanie Double->String
+                        result.Text = (value).ToString(); //Pretypovanie Double->String
+                        break;
+                    case "*":
+                        //value = (value * Double.Parse(result.Text)); //Pretypovanie Double->String
+                        value = MatLib.multiply(value, Double.Parse(result.Text)); //Pretypovanie Double->String
+                        result.Text = (value).ToString(); //Pretypovanie Double->String
+                        break;
+                    case "/":
+                        //value = (value / Double.Parse(result.Text)); //Pretypovanie Double->String
+                        value = MatLib.divide(value, Double.Parse(result.Text)); //Pretypovanie Double->String
+                        result.Text = (value).ToString(); //Pretypovanie Double->String
+                        break;
+                }
+            value = 0; //Nulovanie vysledku a zabranenie duplicite pri viacnasobnej rovnakej operacii
+            }
             Button Button_Name = (Button)sender; 
             operation = Button_Name.Text; //Operacia podla nazvu tlacitka
             value = Double.Parse(result.Text); //Pretypovanie String->Double
             operation_pressed = true; //Operacia vykonana
+            number_pressed = false; //Vykonany operator -> Cislo = False(Vyhybanie sa cyklicej operacii bez dalsieho cisla)
+            
         }
 
         /**
@@ -79,7 +130,9 @@ namespace Calculator
          */
         private void Button_equals_Click(object sender, EventArgs e)
         {
-           
+             if ( operation_pressed == true) { //Osetrenie duplicity vysledku po kombinacii "5" + "6" "+" "="
+                value = 0;
+             }
             switch (operation)
             {
                 case "+":
@@ -102,10 +155,9 @@ namespace Calculator
                     value = MatLib.divide(value, Double.Parse(result.Text)); //Pretypovanie Double->String
                     result.Text = (value).ToString(); //Pretypovanie Double->String
                     break;
-
-                    
-
             }
+            value = 0; //Nulovanie vysledku a zabranenie duplicite pri viacnasobnej rovnakej operacii
+            number_pressed = false; //Vykonany sucet -> Cislo = False(Vyhybanie sa cyklickemu scitavaniu bez dalsieho cisla)
         }
 
         private void Result_TextChanged(object sender, EventArgs e)
