@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 //using System.Linq;
 //using System.Text;
+using Calculator;
 
 namespace StandartDeviation
 {
@@ -19,14 +20,35 @@ namespace StandartDeviation
      */
     class StandartDeviation
     {
-        private List<double> elements; /** Zoznam všetkých čísiel v postupnosti */
-        private int N;
+        private List<double> list; /** Zoznam všetkých čísiel v postupnosti */
+        private int N; /** Počet prvkov */
 
+        /**
+         * @brief Konštruktor triedy StandartDeviation
+         * @param number Zoznam prvok, z ktorých sa má vypočítať smerodajná odchýlka
+         */
         public StandartDeviation(List<double> numbers)
         {
-            elements = numbers;
-            N = elements.Count;
+            list = numbers;
+            N = list.Count;
         } 
- 
+        
+        /**
+         * @todo Odstrániť túto funkciu, zbytočná, iba na testovanie
+         */
+        public double GetN()
+        {
+            return N;
+        }
+
+        public double GetArithmeticMean()
+        {
+            double sum = 0;
+            for (int i = 0; i < N; i++)
+            {
+                sum = MatLib.add(sum, list[i]);
+            }
+            return MatLib.divide(sum, N);
+        }
     }
 }

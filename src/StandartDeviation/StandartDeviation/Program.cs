@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 //using System.Linq;
 //using System.Text;
-using StandartDeviation;
+//using StandartDeviation;
+//using Calculator;
 
 namespace StandartDeviation
 {
@@ -20,6 +21,8 @@ namespace StandartDeviation
             Console.WriteLine();
 
             StandartDeviation s = new StandartDeviation(list);
+            Console.WriteLine("Počet prvkov: {0}", s.GetN());
+            Console.WriteLine("Aritmetický priemer prvkov: {0}", s.GetArithmeticMean());
 
             Console.WriteLine("Press any key to continue . . .");
             Console.Read();
