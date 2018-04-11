@@ -1,0 +1,6 @@
+C:\Users\Natali\Dropbox\Skola\1BIT-leto\IVS\proj2\IVS-Baseballka\src\StandartDeviation\StandartDeviation\bin\Debug\StandartDeviation.exe
+C:\Users\Natali\Dropbox\Skola\1BIT-leto\IVS\proj2\IVS-Baseballka\src\StandartDeviation\StandartDeviation\bin\Debug\StandartDeviation.pdb
+C:\Users\Natali\Dropbox\Skola\1BIT-leto\IVS\proj2\IVS-Baseballka\src\StandartDeviation\StandartDeviation\obj\Debug\StandartDeviation.csprojResolveAssemblyReference.cache
+C:\Users\Natali\Dropbox\Skola\1BIT-leto\IVS\proj2\IVS-Baseballka\src\StandartDeviation\StandartDeviation\obj\Debug\StandartDeviation.csproj.CoreCompileInputs.cache
+C:\Users\Natali\Dropbox\Skola\1BIT-leto\IVS\proj2\IVS-Baseballka\src\StandartDeviation\StandartDeviation\obj\Debug\StandartDeviation.exe
+C:\Users\Natali\Dropbox\Skola\1BIT-leto\IVS\proj2\IVS-Baseballka\src\StandartDeviation\StandartDeviation\obj\Debug\StandartDeviation.pdb
