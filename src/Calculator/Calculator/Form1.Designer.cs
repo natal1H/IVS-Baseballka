@@ -245,7 +245,7 @@ namespace Calculator
             // 
             // button_CE
             // 
-            this.button_CE.BackColor = System.Drawing.Color.Coral;
+            this.button_CE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(72)))), ((int)(((byte)(52)))));
             this.button_CE.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_CE.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
             this.button_CE.Location = new System.Drawing.Point(348, 67);
