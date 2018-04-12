@@ -35,14 +35,6 @@ namespace StandartDeviation
             list = numbers;
             N = list.Count;
         } 
-        
-        /**
-         * @todo Odstrániť túto funkciu, zbytočná, iba na testovanie
-         */
-        public double GetN()
-        {
-            return N;
-        }
 
         /**
          * @brief Výpočet aritmetického priemeru
@@ -70,26 +62,15 @@ namespace StandartDeviation
             return res;
         }
 
-        public double GetArithmeticMeanOfFirstX(int X)
-        {
-            double sum = 0;
-            for (int i = 0; i < X; i++)
-            {
-                sum = MatLib.add(sum, list[i]);
-            }
-            return MatLib.divide(sum, X);
-        }
-
         /**
          * @todo Počíta podĺa zlého vzorca, opraviť (nie je to podĺa toho v zadaní)
          */
-        public double GetSpecialSum()
+        public double GetSum()
         {
             double sum = 0;
-            double arit_mean = GetArithmeticMean(); // tmp = N * arit_mean(x)^2
             for (int i = 0; i < N; i++)
             {
-                double tmp = MatLib.square( MatLib.subtract(list[i], arit_mean) ); // tmp2 = X[i]^2
+                double tmp = MatLib.square(list[i]); 
                 sum = MatLib.add(sum, tmp);
             }
             return sum;
@@ -102,8 +83,9 @@ namespace StandartDeviation
          */
         public double GetStandartDeviation()
         {
-            double tmp = GetSpecialSum();
-
+            double tmp = GetSum();
+            double tmp2 = MatLib.multiply(N, MatLib.square(GetArithmeticMean()));
+            tmp = MatLib.subtract(tmp, tmp2);
             try
             {
                 tmp = MatLib.divide(tmp, N - 1);
