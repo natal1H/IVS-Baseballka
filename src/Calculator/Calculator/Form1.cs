@@ -2,6 +2,7 @@
  * @date 12.4.2018 
  * 
  * @note .NET Framework v4.0
+ * @bug +/- button nie je implementovany
  * @todo Pridať zachytenie výnimiek pri operáciach (delenie nulou apod)
  */
 
