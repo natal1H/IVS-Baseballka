@@ -53,7 +53,7 @@ namespace Calculator
             this.button_log = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button_factorial = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button_sign = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_number7
@@ -358,17 +358,18 @@ namespace Calculator
             this.button_factorial.UseVisualStyleBackColor = false;
             this.button_factorial.Click += new System.EventHandler(this.button_factorial_Click);
             // 
-            // button3
+            // button_sign
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(190)))), ((int)(((byte)(88)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
-            this.button3.Location = new System.Drawing.Point(12, 235);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(106, 50);
-            this.button3.TabIndex = 25;
-            this.button3.Text = "+/-";
-            this.button3.UseVisualStyleBackColor = false;
+            this.button_sign.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(190)))), ((int)(((byte)(88)))));
+            this.button_sign.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_sign.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
+            this.button_sign.Location = new System.Drawing.Point(12, 235);
+            this.button_sign.Name = "button_sign";
+            this.button_sign.Size = new System.Drawing.Size(106, 50);
+            this.button_sign.TabIndex = 25;
+            this.button_sign.Text = "+/-";
+            this.button_sign.UseVisualStyleBackColor = false;
+            this.button_sign.Click += new System.EventHandler(this.button_sign_Click);
             // 
             // CalculatorGUI
             // 
@@ -376,7 +377,7 @@ namespace Calculator
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(199)))), ((int)(((byte)(205)))));
             this.ClientSize = new System.Drawing.Size(410, 297);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button_sign);
             this.Controls.Add(this.button_factorial);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button_log);
@@ -442,7 +443,7 @@ namespace Calculator
         private System.Windows.Forms.Button button_log;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button_factorial;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button_sign;
         private System.Windows.Forms.Button button_CE;
     }
 }
