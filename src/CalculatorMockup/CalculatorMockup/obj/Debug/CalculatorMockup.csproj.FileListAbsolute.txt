@@ -1,0 +1,12 @@
+C:\Users\Natali\source\repos\CalculatorMockup\CalculatorMockup\bin\Debug\CalculatorMockup.exe
+C:\Users\Natali\source\repos\CalculatorMockup\CalculatorMockup\bin\Debug\CalculatorMockup.pdb
+C:\Users\Natali\source\repos\CalculatorMockup\CalculatorMockup\obj\Debug\CalculatorMockup.Properties.Resources.resources
+C:\Users\Natali\source\repos\CalculatorMockup\CalculatorMockup\obj\Debug\CalculatorMockup.csproj.GenerateResource.Cache
+C:\Users\Natali\source\repos\CalculatorMockup\CalculatorMockup\obj\Debug\CalculatorMockup.csproj.CoreCompileInputs.cache
+C:\Users\Natali\source\repos\CalculatorMockup\CalculatorMockup\obj\Debug\CalculatorMockup.exe
+C:\Users\Natali\source\repos\CalculatorMockup\CalculatorMockup\obj\Debug\CalculatorMockup.pdb
+C:\Users\Natali\source\repos\CalculatorMockup\CalculatorMockup\obj\Debug\CalculatorMockup.csprojResolveAssemblyReference.cache
+C:\Users\Natali\source\repos\CalculatorMockup\CalculatorMockup\obj\Debug\CalculatorMockup.Form1.resources
+C:\Users\Natali\source\repos\CalculatorMockup\CalculatorMockup\obj\Debug\CalculatorMockup.Form2.resources
+C:\Users\Natali\source\repos\CalculatorMockup\CalculatorMockup\obj\Debug\CalculatorMockup.Form3.resources
+C:\Users\Natali\source\repos\CalculatorMockup\CalculatorMockup\obj\Debug\CalculatorMockup.Form4.resources
