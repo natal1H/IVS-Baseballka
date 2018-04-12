@@ -358,7 +358,7 @@ namespace Calculator
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.SandyBrown;
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(190)))), ((int)(((byte)(88)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
             this.button3.Location = new System.Drawing.Point(12, 235);
@@ -372,7 +372,7 @@ namespace Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(199)))), ((int)(((byte)(205)))));
             this.ClientSize = new System.Drawing.Size(410, 297);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
