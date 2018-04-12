@@ -6,14 +6,11 @@
  * 
  * @note .NET Framework v4.0
  * 
- * @todo Nahradiť vzorec pre výpočet smerodajnej odchýlky druhým, ktorý je v zadaní
  * @todo Poriadne doplniť komentáre
  */
 
 using System;
 using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
 using Calculator;
 
 namespace StandartDeviation
@@ -70,8 +67,7 @@ namespace StandartDeviation
             double sum = 0;
             for (int i = 0; i < N; i++)
             {
-                double tmp = MatLib.square(list[i]); 
-                sum = MatLib.add(sum, tmp);
+                sum = MatLib.add(sum, MatLib.square(list[i]));
             }
             return sum;
         }

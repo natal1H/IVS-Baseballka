@@ -1,7 +1,6 @@
 ﻿/**
  * @file Program.cs
  * 
- * @todo Odstrániť zbytočné riadky
  */
 
 using System;
@@ -15,6 +14,11 @@ namespace StandartDeviation
 {
     class Program
     {
+        /**
+         * @brief Načíta po riadkoch čísla zo vstupu do zoznamu
+         * 
+         * @return Zoznam čísiel double
+         */
         static List<double> GetInput()
         {
             List<double> input = new List<double>();
@@ -45,7 +49,6 @@ namespace StandartDeviation
             double res = s2.GetStandartDeviation();
 
             Console.WriteLine("Smerodajná odchýlka: {0}", res);
-
 
             Console.WriteLine("Press any key to continue . . .");
             Console.Read();
