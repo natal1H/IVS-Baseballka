@@ -3,7 +3,7 @@
  * 
  * @note .NET Framework v4.0
  * 
- * @bug Mocniny, odmocnina, log neimplementovane   
+ * @bug log neimplementovane   
  * @todo Pridať zachytenie výnimiek pri operáciach (delenie nulou apod)
  */
 
@@ -26,6 +26,7 @@ namespace Calculator
         String operation = ""; //Ziadny operator
         bool operation_pressed = false; //Ziadna operacia
         bool number_pressed = false;
+        bool equal_pressed = false;
         public CalculatorGUI()
         {
             InitializeComponent();
@@ -44,7 +45,7 @@ namespace Calculator
              * (operation_pressed) -> Zmaze cislo pri zadavani dalsieho s mat. operaciou
              * Priklad: "'356' '+' '356211'" -> "'356' '+' '211'"
              */
-            if ((result.Text == "0") || (operation_pressed )) {
+            if ( ((result.Text == "0") || (operation_pressed) || (equal_pressed)) &&  ((!(result.Text == ",")) || (!(result.Text == "0,"))) ) {
                 result.Clear(); //Zmaze cislo po zadani operacie
                 operation_pressed = false; //Dalsie cislo nezmazat -> Nepotrebny udaj -> False
             }
@@ -55,18 +56,22 @@ namespace Calculator
             {
                 if (!result.Text.Contains(","))
                 {
-                    if (result.Text == "0") // if ak je prva zadana desatinna ciarka -> pre cisla ako 0,1
+                    if ((result.Text.Contains("0") && number_pressed == false )) // if ak je prva zadana desatinna ciarka -> pre cisla ako 0,1
                     {
                         result.Text = result.Text + Button_Name.Text; // Vystup vysledku na result.Text
                     }
                     else
                     {
-                        result.Text = "0"; //Zadanie nuly pred desatinnu ciarku
+                        if ( (number_pressed == false && result.Text.Contains("")) || (result.Text == "" && number_pressed == true) )
+                        {
+                            result.Text = "0"; //Zadanie nuly pred desatinnu ciarku
+                        }
                         result.Text = result.Text + Button_Name.Text; // Vystup vysledku na result.Text
                     }
                 }
             }
-            else {
+            else
+            {
                 result.Text = result.Text + Button_Name.Text;
             }
             number_pressed = true;
@@ -114,8 +119,13 @@ namespace Calculator
                         value = MatLib.divide(value, Double.Parse(result.Text)); //Pretypovanie Double->String
                         result.Text = (value).ToString(); //Pretypovanie Double->String
                         break;
+                    case "xʸ":
+                        value = MatLib.power(value, int.Parse(result.Text)); //Pretypovanie Integer->String
+                        result.Text = (value).ToString(); //Pretypovanie Double->String
+                        break;
                 }
             value = 0; //Nulovanie vysledku a zabranenie duplicite pri viacnasobnej rovnakej operacii
+            //operation = "";
             }
             Button Button_Name = (Button)sender; 
             operation = Button_Name.Text; //Operacia podla nazvu tlacitka
@@ -127,6 +137,12 @@ namespace Calculator
 
         /**
          * @brief Vykona matematicku operatciu na zaklade nazvu tlačitka 
+         * @note Program si nepamata posledne zvolene cislo, preto
+         *       po vykonanej operacii je vysledok konecny -> Nie je mozne v operacii
+         *       dalej pokracovat alebo pripadne na vysledok nadviazat bez zadania dalsej operacie!
+         *       Priklad:
+         *       Nebude fungovat: "5" "+" "6" "=" "5" "="
+         *       Bude fungovat: "5" "+" "6" "=" "+" "5" "="   
          */
         private void Button_equals_Click(object sender, EventArgs e)
         {
@@ -155,9 +171,15 @@ namespace Calculator
                     value = MatLib.divide(value, Double.Parse(result.Text)); //Pretypovanie Double->String
                     result.Text = (value).ToString(); //Pretypovanie Double->String
                     break;
+                case "xʸ":
+                    value = MatLib.power(value, int.Parse(result.Text)); //Pretypovanie Integer->String
+                    result.Text = (value).ToString(); //Pretypovanie Double->String
+                    break;
             }
             value = 0; //Nulovanie vysledku a zabranenie duplicite pri viacnasobnej rovnakej operacii
             number_pressed = false; //Vykonany sucet -> Cislo = False(Vyhybanie sa cyklickemu scitavaniu bez dalsieho cisla)
+            //operation = "";
+            equal_pressed = true;
         }
 
         private void Result_TextChanged(object sender, EventArgs e)
@@ -168,6 +190,80 @@ namespace Calculator
         private void Button4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        /**
+         * @brief Podpora pred Numpad
+         * @bug Nefunkcny Enter
+         */ 
+        private void CalculatorGUI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            switch (e.KeyChar.ToString())
+            {
+                case "0":
+                    button_number0.PerformClick();
+                    break;
+                case "1":
+                    button_number1.PerformClick();
+                    break;
+                case "2":
+                    button_number2.PerformClick();
+                    break;
+                case "3":
+                    button_number3.PerformClick();
+                    break;
+                case "4":
+                    button_number4.PerformClick();
+                    break;
+                case "5":
+                    button_number5.PerformClick();
+                    break;
+                case "6":
+                    button_number6.PerformClick();
+                    break;
+                case "7":
+                    button_number7.PerformClick();
+                    break;
+                case "8":
+                    button_number8.PerformClick();
+                    break;
+                case "9":
+                    button_number9.PerformClick();
+                    break;
+                case "+":
+                    button_plus.PerformClick();
+                    break;
+                case "-":
+                    button_minus.PerformClick();
+                    break;
+                case "*":
+                    button_multiply.PerformClick();
+                    break;
+                case "/":
+                    button_divide.PerformClick();
+                    break;
+                case ".":
+                    button_dot.PerformClick();
+                    break;
+                //case "ENTER":
+                //    button_equals.PerformClick();
+                //   break;
+                default:
+                    break;
+            }
+        }
+
+        private void button_Square_Click(object sender, EventArgs e)
+        {
+            value = MatLib.square(Double.Parse(result.Text)); //Pretypovanie Double->String
+            result.Text = (value).ToString(); //Pretypovanie Double->String
+        }
+
+        private void button_sqrt_Click(object sender, EventArgs e)
+        {
+            value = MatLib.sqrt(Double.Parse(result.Text)); //Pretypovanie Double->String
+            result.Text = (value).ToString(); //Pretypovanie Double->String
         }
     }
 }
