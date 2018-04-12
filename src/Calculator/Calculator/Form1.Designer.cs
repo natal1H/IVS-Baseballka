@@ -52,7 +52,7 @@ namespace Calculator
             this.button_sqrt = new System.Windows.Forms.Button();
             this.button_log = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button_factorial = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -330,7 +330,7 @@ namespace Calculator
             this.button_log.TabIndex = 22;
             this.button_log.Text = "log";
             this.button_log.UseVisualStyleBackColor = false;
-            this.button_log.Click += new System.EventHandler(this.Button4_Click);
+            this.button_log.Click += new System.EventHandler(this.button_log_Click);
             // 
             // button1
             // 
@@ -343,18 +343,20 @@ namespace Calculator
             this.button1.TabIndex = 23;
             this.button1.Text = "ʸ√x";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Operator_click);
             // 
-            // button2
+            // button_factorial
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
-            this.button2.Location = new System.Drawing.Point(12, 179);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(50, 50);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "!x";
-            this.button2.UseVisualStyleBackColor = false;
+            this.button_factorial.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button_factorial.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_factorial.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
+            this.button_factorial.Location = new System.Drawing.Point(12, 179);
+            this.button_factorial.Name = "button_factorial";
+            this.button_factorial.Size = new System.Drawing.Size(50, 50);
+            this.button_factorial.TabIndex = 24;
+            this.button_factorial.Text = "!x";
+            this.button_factorial.UseVisualStyleBackColor = false;
+            this.button_factorial.Click += new System.EventHandler(this.button_factorial_Click);
             // 
             // button3
             // 
@@ -375,7 +377,7 @@ namespace Calculator
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(199)))), ((int)(((byte)(205)))));
             this.ClientSize = new System.Drawing.Size(410, 297);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button_factorial);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button_log);
             this.Controls.Add(this.button_sqrt);
@@ -439,7 +441,7 @@ namespace Calculator
         private System.Windows.Forms.Button button_sqrt;
         private System.Windows.Forms.Button button_log;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button_factorial;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button_CE;
     }
