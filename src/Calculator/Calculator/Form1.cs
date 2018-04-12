@@ -2,8 +2,6 @@
  * @date 12.4.2018 
  * 
  * @note .NET Framework v4.0
- * 
- * @bug log neimplementovane   
  * @todo Pridať zachytenie výnimiek pri operáciach (delenie nulou apod)
  */
 
@@ -123,6 +121,10 @@ namespace Calculator
                         value = MatLib.power(value, int.Parse(result.Text)); //Pretypovanie Integer->String
                         result.Text = (value).ToString(); //Pretypovanie Double->String
                         break;
+                    case "ʸ√x":
+                        value = MatLib.genroot(value, int.Parse(result.Text)); //Pretypovanie Integer->String
+                        result.Text = (value).ToString(); //Pretypovanie Double->String
+                        break;
                 }
             value = 0; //Nulovanie vysledku a zabranenie duplicite pri viacnasobnej rovnakej operacii
             //operation = "";
@@ -175,6 +177,10 @@ namespace Calculator
                     value = MatLib.power(value, int.Parse(result.Text)); //Pretypovanie Integer->String
                     result.Text = (value).ToString(); //Pretypovanie Double->String
                     break;
+                case "ʸ√x":
+                    value = MatLib.genroot(value, int.Parse(result.Text)); //Pretypovanie Integer->String
+                    result.Text = (value).ToString(); //Pretypovanie Double->String
+                    break;
             }
             value = 0; //Nulovanie vysledku a zabranenie duplicite pri viacnasobnej rovnakej operacii
             number_pressed = false; //Vykonany sucet -> Cislo = False(Vyhybanie sa cyklickemu scitavaniu bez dalsieho cisla)
@@ -187,11 +193,7 @@ namespace Calculator
 
         }
 
-        private void Button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
+ 
         /**
          * @brief Podpora pred Numpad
          * @bug Nefunkcny Enter
@@ -263,6 +265,18 @@ namespace Calculator
         private void button_sqrt_Click(object sender, EventArgs e)
         {
             value = MatLib.sqrt(Double.Parse(result.Text)); //Pretypovanie Double->String
+            result.Text = (value).ToString(); //Pretypovanie Double->String
+        }
+
+        private void button_factorial_Click(object sender, EventArgs e)
+        {
+            value = MatLib.factorial(int.Parse(result.Text)); //Pretypovanie int->String
+            result.Text = (value).ToString(); //Pretypovanie Double->String
+        }
+
+        private void button_log_Click(object sender, EventArgs e)
+        {
+            value = MatLib.log10(Double.Parse(result.Text)); //Pretypovanie Double->String
             result.Text = (value).ToString(); //Pretypovanie Double->String
         }
     }
