@@ -5,6 +5,18 @@
  * @todo Pridať zachytenie výnimiek pri operáciach (delenie nulou apod)
  */
 
+/**
+ * @date 30.3.2018 
+ * 
+ * @note .NET Framework v4.0
+ * 
+ * @bug Maximalne jedna matematicka operacia
+ *      Mocniny, odmocnina, log neimplementovane
+ *      Neimplementovana desatinna ciarka:
+ *         1)Je mozne vlozit nekonecne mnozsvo desatinnych ciarok(Prve zadanie cisla)
+ *         2)result.Clear pri zadani ciarky
+ *         3)Pod operande nie je mozne zadat dva a viac ciferne cislo
+ */
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,6 +58,7 @@ namespace Calculator
             if ( ((result.Text == "0") || (operation_pressed) || (equal_pressed)) &&  ((!(result.Text == ",")) || (!(result.Text == "0,"))) ) {
                 result.Clear(); //Zmaze cislo po zadani operacie
                 operation_pressed = false; //Dalsie cislo nezmazat -> Nepotrebny udaj -> False
+                equal_pressed = false;
             }
 
             Button Button_Name = (Button)sender;
