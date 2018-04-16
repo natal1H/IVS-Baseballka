@@ -98,27 +98,27 @@
             // standartToolStripMenuItem
             // 
             this.standartToolStripMenuItem.Name = "standartToolStripMenuItem";
-            this.standartToolStripMenuItem.Size = new System.Drawing.Size(155, 26);
+            this.standartToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.standartToolStripMenuItem.Text = "Štandartný";
             this.standartToolStripMenuItem.Click += new System.EventHandler(this.standartToolStripMenuItem_Click);
             // 
             // scientificToolStripMenuItem
             // 
             this.scientificToolStripMenuItem.Name = "scientificToolStripMenuItem";
-            this.scientificToolStripMenuItem.Size = new System.Drawing.Size(155, 26);
+            this.scientificToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.scientificToolStripMenuItem.Text = "Vedecký";
             this.scientificToolStripMenuItem.Click += new System.EventHandler(this.scientificToolStripMenuItem_Click);
             // 
             // grafickýToolStripMenuItem
             // 
             this.grafickýToolStripMenuItem.Name = "grafickýToolStripMenuItem";
-            this.grafickýToolStripMenuItem.Size = new System.Drawing.Size(155, 26);
+            this.grafickýToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.grafickýToolStripMenuItem.Text = "Grafický";
             // 
             // štatistickýToolStripMenuItem
             // 
             this.štatistickýToolStripMenuItem.Name = "štatistickýToolStripMenuItem";
-            this.štatistickýToolStripMenuItem.Size = new System.Drawing.Size(155, 26);
+            this.štatistickýToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.štatistickýToolStripMenuItem.Text = "Štatistický";
             this.štatistickýToolStripMenuItem.Click += new System.EventHandler(this.štatistickýToolStripMenuItem_Click);
             // 
@@ -132,15 +132,17 @@
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button1.Location = new System.Drawing.Point(736, 138);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(65, 65);
             this.button1.TabIndex = 2;
-            this.button1.Text = "x^y";
+            this.button1.Text = "xʸ";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button2.Location = new System.Drawing.Point(452, 138);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(65, 65);
@@ -150,6 +152,7 @@
             // 
             // button3
             // 
+            this.button3.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button3.Location = new System.Drawing.Point(523, 138);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(65, 65);
@@ -159,6 +162,7 @@
             // 
             // button4
             // 
+            this.button4.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button4.Location = new System.Drawing.Point(594, 138);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(65, 65);
@@ -168,6 +172,7 @@
             // 
             // button5
             // 
+            this.button5.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button5.Location = new System.Drawing.Point(665, 138);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(65, 65);
@@ -177,6 +182,7 @@
             // 
             // button6
             // 
+            this.button6.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button6.Location = new System.Drawing.Point(454, 422);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(65, 65);
@@ -186,6 +192,7 @@
             // 
             // button7
             // 
+            this.button7.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button7.Location = new System.Drawing.Point(525, 422);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(65, 65);
@@ -195,6 +202,7 @@
             // 
             // button8
             // 
+            this.button8.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button8.Location = new System.Drawing.Point(665, 209);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(65, 65);
@@ -204,6 +212,7 @@
             // 
             // button9
             // 
+            this.button9.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button9.Location = new System.Drawing.Point(594, 209);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(65, 65);
@@ -213,6 +222,7 @@
             // 
             // button10
             // 
+            this.button10.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button10.Location = new System.Drawing.Point(523, 209);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(65, 65);
@@ -222,6 +232,7 @@
             // 
             // button11
             // 
+            this.button11.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button11.Location = new System.Drawing.Point(452, 209);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(65, 65);
@@ -231,6 +242,7 @@
             // 
             // button12
             // 
+            this.button12.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button12.Location = new System.Drawing.Point(736, 209);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(65, 65);
@@ -240,6 +252,7 @@
             // 
             // button14
             // 
+            this.button14.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button14.Location = new System.Drawing.Point(665, 280);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(65, 65);
@@ -249,6 +262,7 @@
             // 
             // button15
             // 
+            this.button15.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button15.Location = new System.Drawing.Point(594, 280);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(65, 65);
@@ -258,6 +272,7 @@
             // 
             // button16
             // 
+            this.button16.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button16.Location = new System.Drawing.Point(523, 280);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(65, 65);
@@ -267,6 +282,7 @@
             // 
             // button17
             // 
+            this.button17.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button17.Location = new System.Drawing.Point(452, 280);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(65, 65);
@@ -276,6 +292,7 @@
             // 
             // button18
             // 
+            this.button18.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button18.Location = new System.Drawing.Point(736, 280);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(65, 65);
@@ -285,6 +302,7 @@
             // 
             // button20
             // 
+            this.button20.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button20.Location = new System.Drawing.Point(665, 351);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(65, 65);
@@ -294,6 +312,7 @@
             // 
             // button21
             // 
+            this.button21.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button21.Location = new System.Drawing.Point(594, 351);
             this.button21.Name = "button21";
             this.button21.Size = new System.Drawing.Size(65, 65);
@@ -303,6 +322,7 @@
             // 
             // button23
             // 
+            this.button23.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button23.Location = new System.Drawing.Point(452, 351);
             this.button23.Name = "button23";
             this.button23.Size = new System.Drawing.Size(136, 65);
@@ -312,6 +332,7 @@
             // 
             // button24
             // 
+            this.button24.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button24.Location = new System.Drawing.Point(736, 351);
             this.button24.Name = "button24";
             this.button24.Size = new System.Drawing.Size(65, 65);
@@ -321,15 +342,17 @@
             // 
             // button13
             // 
+            this.button13.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button13.Location = new System.Drawing.Point(665, 422);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(65, 65);
             this.button13.TabIndex = 26;
-            this.button13.Text = "PI";
+            this.button13.Text = "π";
             this.button13.UseVisualStyleBackColor = true;
             // 
             // button19
             // 
+            this.button19.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button19.Location = new System.Drawing.Point(594, 422);
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(65, 65);
@@ -339,24 +362,27 @@
             // 
             // button22
             // 
+            this.button22.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button22.Location = new System.Drawing.Point(525, 493);
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(65, 65);
             this.button22.TabIndex = 28;
-            this.button22.Text = "->";
+            this.button22.Text = "→";
             this.button22.UseVisualStyleBackColor = true;
             // 
             // button25
             // 
+            this.button25.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button25.Location = new System.Drawing.Point(454, 493);
             this.button25.Name = "button25";
             this.button25.Size = new System.Drawing.Size(65, 65);
             this.button25.TabIndex = 27;
-            this.button25.Text = "<-";
+            this.button25.Text = "←";
             this.button25.UseVisualStyleBackColor = true;
             // 
             // button26
             // 
+            this.button26.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button26.Location = new System.Drawing.Point(736, 422);
             this.button26.Name = "button26";
             this.button26.Size = new System.Drawing.Size(65, 65);
@@ -366,6 +392,7 @@
             // 
             // button27
             // 
+            this.button27.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button27.Location = new System.Drawing.Point(594, 493);
             this.button27.Name = "button27";
             this.button27.Size = new System.Drawing.Size(65, 65);
@@ -376,18 +403,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(454, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 17);
+            this.label1.Size = new System.Drawing.Size(116, 21);
             this.label1.TabIndex = 31;
             this.label1.Text = "Predpis funkcie";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.Location = new System.Drawing.Point(24, 49);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 17);
+            this.label2.Size = new System.Drawing.Size(40, 21);
             this.label2.TabIndex = 32;
             this.label2.Text = "Graf";
             // 
@@ -402,18 +431,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.Location = new System.Drawing.Point(36, 502);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 17);
+            this.label3.Size = new System.Drawing.Size(30, 21);
             this.label3.TabIndex = 34;
             this.label3.Text = "Od";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label4.Location = new System.Drawing.Point(38, 531);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(25, 17);
+            this.label4.Size = new System.Drawing.Size(28, 21);
             this.label4.TabIndex = 35;
             this.label4.Text = "Po";
             // 
@@ -433,6 +464,7 @@
             // 
             // button28
             // 
+            this.button28.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button28.Location = new System.Drawing.Point(296, 497);
             this.button28.Name = "button28";
             this.button28.Size = new System.Drawing.Size(136, 60);
