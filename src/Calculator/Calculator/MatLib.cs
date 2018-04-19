@@ -27,7 +27,7 @@ namespace Calculator
     /**
      * @class Trieda s matematickými operáciami
      */
-    class MatLib
+    public class MatLib
     {
         /**
          * @brief Vypočíta súčet dvoch čísiel
