@@ -116,6 +116,10 @@ namespace Calculator
          */
         public static double power(double number, int exp)
         {
+            if (number < 0)
+            {
+                throw new ArgumentOutOfRangeException("Chyba! Exponent musí byť prirodzené číslo.");
+            }
             return Math.Pow(number, exp);
         }
 
@@ -129,7 +133,7 @@ namespace Calculator
         {
             if (number < 0)
             {
-                throw new ArgumentOutOfRangeException("Chyba! Nesmie byť záporné číslo.");
+                throw new ArgumentOutOfRangeException("Chyba! Nesmie byť záporné číslo pod odmocninou.");
             }
             return Math.Sqrt(number);
         }
@@ -143,9 +147,9 @@ namespace Calculator
          */
         public static double genroot(double number, int root)
         {
-            if (number < 0)
+            if (number < 0 && (root % 2 == 0 ))
             {
-                throw new ArgumentOutOfRangeException("Chyba! Nesmie byť záporné číslo.");
+                throw new ArgumentOutOfRangeException("Chyba! Nesmie byť záporné číslo pod párnou odmocninou.");
             }
             return Math.Pow(number, 1.0 / root);
         }
@@ -160,7 +164,7 @@ namespace Calculator
         {
             if (number < 0)
             {
-                throw new ArgumentOutOfRangeException("Chyba! Nesmie byť záporné číslo.");
+                throw new ArgumentOutOfRangeException("Chyba! Argument nesmie byť záporné číslo.");
             }
             return Math.Log10(number);
         }
