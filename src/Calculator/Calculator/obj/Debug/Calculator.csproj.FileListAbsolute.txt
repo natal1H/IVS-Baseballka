@@ -13,3 +13,4 @@ C:\Users\NovákMatej(204334)\Desktop\gittt\IVS-Baseballka\src\Calculator\Calcula
 C:\Users\NovákMatej(204334)\Desktop\gittt\IVS-Baseballka\src\Calculator\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
 C:\Users\NovákMatej(204334)\Desktop\gittt\IVS-Baseballka\src\Calculator\Calculator\obj\Debug\Calculator.exe
 C:\Users\NovákMatej(204334)\Desktop\gittt\IVS-Baseballka\src\Calculator\Calculator\obj\Debug\Calculator.pdb
+C:\Users\NovákMatej(204334)\Desktop\gittt\IVS-Baseballka\src\Calculator\Calculator\obj\Debug\Calculator.csprojResolveAssemblyReference.cache

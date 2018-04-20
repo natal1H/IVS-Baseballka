@@ -75,7 +75,7 @@ namespace Tests
             try
             {
                 MatLib.divide(1, 0);
-                Assert.Fail("ERROR, delenie nulou.");
+                Assert.Fail("Chyba, delenie nulou.");
             }
             catch
             {
@@ -84,7 +84,7 @@ namespace Tests
             try
             {
                 MatLib.divide(-549.41268, 0);
-                Assert.Fail("ERROR, delenie nulou.");
+                Assert.Fail("Chyba, delenie nulou.");
             }
             catch
             {
@@ -109,7 +109,147 @@ namespace Tests
         [TestMethod]
         public void ShouldFactorial()
         {
+            Assert.AreEqual(120, MatLib.factorial(5));
+            Assert.AreEqual(1, MatLib.factorial(1));
+            Assert.AreEqual(3628800, MatLib.factorial(10));
+            Assert.AreEqual(1, MatLib.factorial(0));
+            Assert.AreNotEqual(120.00001, MatLib.factorial(5));
 
+            try
+            {
+                MatLib.factorial(-1);
+                Assert.Fail("Chyba, faktoriál musí byť minimálne 0.");
+            }
+            catch
+            {
+            }
+        }
+
+        [TestMethod]
+        public void ShouldSquare()
+        {
+            Assert.AreEqual(1, MatLib.square(1));
+            Assert.AreEqual(0, MatLib.square(0));
+            Assert.AreEqual(1, MatLib.square(-1));
+            Assert.AreEqual(10000, MatLib.square(100));
+            Assert.AreEqual(1.5625, MatLib.square(1.25), Accuracy);
+            Assert.AreEqual(0.010201, MatLib.square(0.101), Accuracy);
+            Assert.AreEqual(3, MatLib.square(1.73205080756), Accuracy);
+
+            Assert.AreNotEqual(15, MatLib.square(4));
+            Assert.AreNotEqual(16, MatLib.square(4.1), Accuracy);
+        }
+
+        [TestMethod]
+        public void ShouldPower()
+        {
+            Assert.AreEqual(1, MatLib.power(1, 1));
+            Assert.AreEqual(1, MatLib.power(1, 10));
+            Assert.AreEqual(1, MatLib.power(1, -10));
+            Assert.AreEqual(1, MatLib.power(1, 0));
+            Assert.AreEqual(1, MatLib.power(10, 0));
+            Assert.AreEqual(1, MatLib.power(0, 0));
+            Assert.AreEqual(0, MatLib.power(0, 10));
+            Assert.AreEqual(2, MatLib.power(2, 1));
+            Assert.AreEqual(1024, MatLib.power(2, 10));
+            Assert.AreEqual(0.0009765625, MatLib.power(2, -10), Accuracy);
+            Assert.AreEqual(27, MatLib.power(3, 3));
+            Assert.AreEqual(-27, MatLib.power(-3, 3));
+            Assert.AreEqual(81, MatLib.power(-3, 4));
+
+            Assert.AreNotEqual(0.001, MatLib.power(-10, -3));
+
+            try
+            {
+                MatLib.power(0, -1);
+                Assert.Fail("Chyba, delenie nulou.");
+            }
+            catch
+            {
+            }
+        }
+
+        [TestMethod]
+        public void ShouldSqrt()
+        {
+            Assert.AreEqual(0, MatLib.sqrt(0));
+            Assert.AreEqual(1, MatLib.sqrt(1));
+            Assert.AreEqual(1.414213562373, MatLib.sqrt(2), Accuracy);
+            Assert.AreEqual(5, MatLib.sqrt(25));
+            Assert.AreEqual(0.707106781186547, MatLib.sqrt(0.5), Accuracy);
+            Assert.AreEqual(387.2989801174281, MatLib.sqrt(150000.5), Accuracy);
+            Assert.AreNotEqual(1000, MatLib.sqrt(999999), Accuracy);
+
+            try
+            {
+                MatLib.sqrt(-1);
+                Assert.Fail("Chyba, nepatri do oboru realnych cisel.");
+            }
+            catch
+            {
+            }
+        }
+
+        [TestMethod]
+        public void ShouldGenroot()
+        {
+            Assert.AreEqual(0, MatLib.genroot(0, 10));
+            Assert.AreEqual(1, MatLib.genroot(1, 1));
+            Assert.AreEqual(-2, MatLib.genroot(-8, 3));
+            Assert.AreEqual(5, MatLib.genroot(25, 2));
+            Assert.AreEqual(100, MatLib.genroot(100000000, 4));
+            Assert.AreEqual(3.684031498640386, MatLib.genroot(50, 3), Accuracy);
+
+            Assert.AreNotEqual(1.9, MatLib.genroot(22.7, 5), Accuracy);
+            Assert.AreNotEqual(-1.9, MatLib.genroot(-22.7, 5), Accuracy); 
+
+            try
+            {
+                MatLib.genroot(10, 0);
+                Assert.Fail("Chyba, nepatri do oboru realnych cisel.");
+            }
+            catch
+            {
+            }
+
+            try
+            {
+                MatLib.genroot(-8, 2);
+                Assert.Fail("Chyba, nepatri do oboru realnych cisel.");
+            }
+            catch
+            {
+            }
+        }
+
+        [TestMethod]
+        public void ShouldLog10()
+        {
+            Assert.AreEqual(1, MatLib.log10(10));
+            Assert.AreEqual(6, MatLib.log10(1000000));
+            Assert.AreEqual(1.6232492903979, MatLib.log10(42), Accuracy);
+            Assert.AreEqual(1.1760912590556, MatLib.log10(15), Accuracy);
+
+            Assert.AreNotEqual(3, MatLib.log10(999), Accuracy);
+            Assert.AreNotEqual(1.1, MatLib.log10(11), Accuracy);
+
+            try
+            {
+                MatLib.log10(-1);
+                Assert.Fail("Chyba, nedefinovana hodnota.");
+            }
+            catch
+            {
+            }
+
+            try
+            {
+                MatLib.log10(0);
+                Assert.Fail("Chyba, nedefinovana hodnota.");
+            }
+            catch
+            {
+            }
         }
     }
 }
