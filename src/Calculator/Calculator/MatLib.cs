@@ -162,9 +162,9 @@ namespace Calculator
          */
         public static double log10(double number)
         {
-            if (number < 0)
+            if (number <= 0)
             {
-                throw new ArgumentOutOfRangeException("Chyba! Argument nesmie byť záporné číslo.");
+                throw new ArgumentOutOfRangeException("Chyba! Argument musí byť kladné číslo.");
             }
             return Math.Log10(number);
         }
