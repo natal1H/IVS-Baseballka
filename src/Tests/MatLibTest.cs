@@ -145,19 +145,17 @@ namespace Tests
         {
             Assert.AreEqual(1, MatLib.power(1, 1));
             Assert.AreEqual(1, MatLib.power(1, 10));
-            Assert.AreEqual(1, MatLib.power(1, -10));
             Assert.AreEqual(1, MatLib.power(1, 0));
             Assert.AreEqual(1, MatLib.power(10, 0));
             Assert.AreEqual(1, MatLib.power(0, 0));
             Assert.AreEqual(0, MatLib.power(0, 10));
             Assert.AreEqual(2, MatLib.power(2, 1));
             Assert.AreEqual(1024, MatLib.power(2, 10));
-            Assert.AreEqual(0.0009765625, MatLib.power(2, -10), Accuracy);
             Assert.AreEqual(27, MatLib.power(3, 3));
             Assert.AreEqual(-27, MatLib.power(-3, 3));
             Assert.AreEqual(81, MatLib.power(-3, 4));
 
-            Assert.AreNotEqual(0.001, MatLib.power(-10, -3));
+            Assert.AreNotEqual(105, MatLib.power(10, 3));
 
             try
             {
