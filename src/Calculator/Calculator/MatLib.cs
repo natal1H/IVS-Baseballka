@@ -116,7 +116,7 @@ namespace Calculator
          */
         public static double power(double number, int exp)
         {
-            if (number < 0)
+            if (exp < 0)
             {
                 throw new ArgumentOutOfRangeException("Chyba! Exponent musí byť prirodzené číslo.");
             }
@@ -151,7 +151,10 @@ namespace Calculator
             {
                 throw new ArgumentOutOfRangeException("Chyba! Nesmie byť záporné číslo pod párnou odmocninou.");
             }
-            return Math.Pow(number, 1.0 / root);
+            if (number < 0 && (root % 2 == 1))
+                return -(Math.Pow(-number, 1.0 / root));
+            else
+                return Math.Pow(number, 1.0 / root);
         }
 
         /**
