@@ -1,8 +1,8 @@
-/**************************************************
+﻿/**************************************************
  * Názov projektu: Kalkulačka
  * Súbor: MatLib.cs
  * Dátum: 6.4.2018
- * Posledná zmena: 6.4.2018
+ * Posledná zmena: 20.4.2018
  * Autor: Natália Holková xholko02(at)fit.vutbr.cz
  * 
  * Popis: Matematická knižnica
@@ -17,10 +17,7 @@
  * @note .NET Framework v4.0
  */
 
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
+using System;
 
 namespace Calculator
 {
@@ -76,7 +73,7 @@ namespace Calculator
         {
             if (number2 == 0)
             {
-                throw new System.DivideByZeroException("Chyba! Nie je povolené deliť 0.");
+                throw new DivideByZeroException("Chyba! Nie je povolené deliť 0.");
             }
             return number1 / number2;
         }
@@ -89,6 +86,10 @@ namespace Calculator
          */
         public static long factorial(int number)
         {
+            if (number < 0)
+            {
+                throw new ArgumentOutOfRangeException("Chyba! Nesmie byť záporné číslo.");
+            }
             long res = 1;
             for (int i = 2; i <= number; i++)
                 res = res * i;
@@ -115,7 +116,11 @@ namespace Calculator
          */
         public static double power(double number, int exp)
         {
-            return System.Math.Pow(number, exp);
+            if (exp < 0)
+            {
+                throw new ArgumentOutOfRangeException("Chyba! Exponent musí byť prirodzené číslo.");
+            }
+            return Math.Pow(number, exp);
         }
 
         /**
@@ -126,14 +131,15 @@ namespace Calculator
          */
         public static double sqrt(double number)
         {
-            return System.Math.Sqrt(number);
+            if (number < 0)
+            {
+                throw new ArgumentOutOfRangeException("Chyba! Nesmie byť záporné číslo pod odmocninou.");
+            }
+            return Math.Sqrt(number);
         }
 
         /**
          * @brief Vypočíta n-tú odmocninu čísla
-         * 
-         * @todo ošetriť root menšie ako 0
-         * @todo ošetriť number menšie ako 0: ak root % 2 = 0 -> error, inak povolená operácia 
          * 
          * @param number Základ odmocniny
          * @param root Stupeň odmocniny
@@ -141,7 +147,14 @@ namespace Calculator
          */
         public static double genroot(double number, int root)
         {
-            return System.Math.Pow(number, 1.0 / root);
+            if (number < 0 && (root % 2 == 0))
+            {
+                throw new ArgumentOutOfRangeException("Chyba! Nesmie byť záporné číslo pod párnou odmocninou.");
+            }
+            if (number < 0 && (root % 2 == 1))
+                return -(Math.Pow(-number, 1.0 / root));
+            else
+                return Math.Pow(number, 1.0 / root);
         }
 
         /**
@@ -152,7 +165,11 @@ namespace Calculator
          */
         public static double log10(double number)
         {
-            return System.Math.Log10(number);
+            if (number <= 0)
+            {
+                throw new ArgumentOutOfRangeException("Chyba! Argument musí byť kladné číslo.");
+            }
+            return Math.Log10(number);
         }
     }
 }
