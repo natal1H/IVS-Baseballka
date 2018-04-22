@@ -1,8 +1,6 @@
 /**
- * @date 12.4.2018 
  * @note .NET Framework v4.0
  */
-
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -98,58 +96,74 @@ namespace Calculator
          */
         private void Operator_click(object sender, EventArgs e)
         {
-            if (number_pressed == true && second_number_pressed)
+            if (result.Text != "Chyba: Delenie nulou")
             {
-
-                // TODO Zlucenie s Button_equals_Click?
-
-                switch (operation)
+                if (number_pressed == true && second_number_pressed)
                 {
-                    case "+":
-                        //value = (value + Double.Parse(result.Text)); //Pretypovanie Double->String
-                        value = MatLib.add(value, Double.Parse(result.Text)); //Pretypovanie Double->String
-                        result.Text = (value).ToString(); //Pretypovanie Double->String
-                        second_number_pressed = false; //Vykonany operator -> Druhe cislo = False(Vyhybanie sa cyklicej operacii bez dalsieho cisla)
-                        break;
-                    case "-":
-                        //value = (value - Double.Parse(result.Text)); //Pretypovanie Double->String
-                        value = MatLib.subtract(Double.Parse(result.Text), value); //Pretypovanie Double->String
-                        result.Text = (value).ToString(); //Pretypovanie Double->String
-                        second_number_pressed = false; //Vykonany operator -> Druhe cislo = False(Vyhybanie sa cyklicej operacii bez dalsieho cisla)
-                        break;
-                    case "*":
-                        //value = (value * Double.Parse(result.Text)); //Pretypovanie Double->String
-                        if (second_number_pressed == true)
-                        {
-                            value = MatLib.multiply(value, Double.Parse(result.Text)); //Pretypovanie Double->String
+
+                    // TODO Zlucenie s Button_equals_Click?
+
+                    switch (operation)
+                    {
+                        case "+":
+                            //value = (value + Double.Parse(result.Text)); //Pretypovanie Double->String
+                            value = MatLib.add(value, Double.Parse(result.Text)); //Pretypovanie Double->String
                             result.Text = (value).ToString(); //Pretypovanie Double->String
                             second_number_pressed = false; //Vykonany operator -> Druhe cislo = False(Vyhybanie sa cyklicej operacii bez dalsieho cisla)
-                        }
-                        break;
-                    case "/":
-                        //value = (value / Double.Parse(result.Text)); //Pretypovanie Double->String
-                        if (second_number_pressed == true)
-                        {
-                            value = MatLib.divide(value, Double.Parse(result.Text)); //Pretypovanie Double->String
+                            break;
+                        case "-":
+                            //value = (value - Double.Parse(result.Text)); //Pretypovanie Double->String
+                            value = MatLib.subtract(Double.Parse(result.Text), value); //Pretypovanie Double->String
                             result.Text = (value).ToString(); //Pretypovanie Double->String
                             second_number_pressed = false; //Vykonany operator -> Druhe cislo = False(Vyhybanie sa cyklicej operacii bez dalsieho cisla)
-                        }
-                        break;
-                    case "xʸ":
-                        value = MatLib.power(value, int.Parse(result.Text)); //Pretypovanie Integer->String
-                        result.Text = (value).ToString(); //Pretypovanie Double->String
-                        break;
-                    case "ʸ√x":
-                        value = MatLib.genroot(value, int.Parse(result.Text)); //Pretypovanie Integer->String
-                        result.Text = (value).ToString(); //Pretypovanie Double->String
-                        break;
+                            break;
+                        case "*":
+                            //value = (value * Double.Parse(result.Text)); //Pretypovanie Double->String
+                            if (second_number_pressed == true)
+                            {
+                                value = MatLib.multiply(value, Double.Parse(result.Text)); //Pretypovanie Double->String
+                                result.Text = (value).ToString(); //Pretypovanie Double->String
+                                second_number_pressed = false; //Vykonany operator -> Druhe cislo = False(Vyhybanie sa cyklicej operacii bez dalsieho cisla)
+                            }
+                            break;
+                        case "/":
+                            //value = (value / Double.Parse(result.Text)); //Pretypovanie Double->String
+                            if (second_number_pressed == true)
+                            {
+                                if (result.Text == "0")
+                                {
+                                    result.Text = "Chyba: Delenie nulou";
+                                    number_pressed = false;
+                                    second_number_pressed = false;
+                                }
+                                else
+                                {
+                                    value = MatLib.divide(value, Double.Parse(result.Text)); //Pretypovanie Double->String
+                                    result.Text = (value).ToString(); //Pretypovanie Double->String
+                                    second_number_pressed = false; //Vykonany operator -> Druhe cislo = False(Vyhybanie sa cyklicej operacii bez dalsieho cisla)
+                                }
+                            }
+                            break;
+                        case "xʸ":
+                            value = MatLib.power(value, int.Parse(result.Text)); //Pretypovanie Integer->String
+                            result.Text = (value).ToString(); //Pretypovanie Double->String
+                            break;
+                        case "ʸ√x":
+                            value = MatLib.genroot(value, int.Parse(result.Text)); //Pretypovanie Integer->String
+                            result.Text = (value).ToString(); //Pretypovanie Double->String
+                            break;
+                    }
+                    value = 0; //Nulovanie vysledku a zabranenie duplicite pri viacnasobnej rovnakej operacii
+                               //operation = "";
                 }
-                value = 0; //Nulovanie vysledku a zabranenie duplicite pri viacnasobnej rovnakej operacii
-                           //operation = "";
             }
             Button Button_Name = (Button)sender;
             operation = Button_Name.Text; //Operacia podla nazvu tlacitka
-            value = Double.Parse(result.Text); //Pretypovanie String->Double
+            if (result.Text != "Chyba: Delenie nulou")
+            {
+                value = Double.Parse(result.Text); //Pretypovanie String->Double
+
+            }
             operation_pressed = true; //Operacia vykonana
             //number_pressed = false; //Vykonany operator -> Cislo = False(Vyhybanie sa cyklicej operacii bez dalsieho cisla)
             //equal_pressed = false;
@@ -171,36 +185,48 @@ namespace Calculator
             { //Osetrenie duplicity vysledku po kombinacii "5" + "6" "+" "="
                 value = 0;
             }
-            switch (operation)
+            if (result.Text != "Chyba: Delenie nulou")
             {
-                case "+":
-                    //value = (value + Double.Parse(result.Text)); //Pretypovanie Double->String
-                    value = MatLib.add(value, Double.Parse(result.Text)); //Pretypovanie Double->String
-                    result.Text = (value).ToString(); //Pretypovanie Double->String
-                    break;
-                case "-":
-                    //value = (value - Double.Parse(result.Text)); //Pretypovanie Double->String
-                    value = MatLib.subtract(value, Double.Parse(result.Text)); //Pretypovanie Double->String
-                    result.Text = (value).ToString(); //Pretypovanie Double->String
-                    break;
-                case "*":
-                    //value = (value * Double.Parse(result.Text)); //Pretypovanie Double->String
-                    value = MatLib.multiply(value, Double.Parse(result.Text)); //Pretypovanie Double->String
-                    result.Text = (value).ToString(); //Pretypovanie Double->String
-                    break;
-                case "/":
-                    //value = (value / Double.Parse(result.Text)); //Pretypovanie Double->String
-                    value = MatLib.divide(value, Double.Parse(result.Text)); //Pretypovanie Double->String
-                    result.Text = (value).ToString(); //Pretypovanie Double->String
-                    break;
-                case "xʸ":
-                    value = MatLib.power(value, int.Parse(result.Text)); //Pretypovanie Integer->String
-                    result.Text = (value).ToString(); //Pretypovanie Double->String
-                    break;
-                case "ʸ√x":
-                    value = MatLib.genroot(value, int.Parse(result.Text)); //Pretypovanie Integer->String
-                    result.Text = (value).ToString(); //Pretypovanie Double->String
-                    break;
+                switch (operation)
+                {
+                    case "+":
+                        //value = (value + Double.Parse(result.Text)); //Pretypovanie Double->String
+                        value = MatLib.add(value, Double.Parse(result.Text)); //Pretypovanie Double->String
+                        result.Text = (value).ToString(); //Pretypovanie Double->String
+                        break;
+                    case "-":
+                        //value = (value - Double.Parse(result.Text)); //Pretypovanie Double->String
+                        value = MatLib.subtract(value, Double.Parse(result.Text)); //Pretypovanie Double->String
+                        result.Text = (value).ToString(); //Pretypovanie Double->String
+                        break;
+                    case "*":
+                        //value = (value * Double.Parse(result.Text)); //Pretypovanie Double->String
+                        value = MatLib.multiply(value, Double.Parse(result.Text)); //Pretypovanie Double->String
+                        result.Text = (value).ToString(); //Pretypovanie Double->String
+                        break;
+                    case "/":
+                        //value = (value / Double.Parse(result.Text)); //Pretypovanie Double->String
+                        if (result.Text == "0")
+                        {
+                            result.Text = "Chyba: Delenie nulou";
+                            number_pressed = false;
+                            second_number_pressed = false;
+                        }
+                        else
+                        {
+                            value = MatLib.divide(value, Double.Parse(result.Text)); //Pretypovanie Double->String
+                            result.Text = (value).ToString(); //Pretypovanie Double->String
+                        }
+                        break;
+                    case "xʸ":
+                        value = MatLib.power(value, int.Parse(result.Text)); //Pretypovanie Integer->String
+                        result.Text = (value).ToString(); //Pretypovanie Double->String
+                        break;
+                    case "ʸ√x":
+                        value = MatLib.genroot(value, int.Parse(result.Text)); //Pretypovanie Integer->String
+                        result.Text = (value).ToString(); //Pretypovanie Double->String
+                        break;
+                }
             }
             value = 0; //Nulovanie vysledku a zabranenie duplicite pri viacnasobnej rovnakej operacii
             number_pressed = false; //Vykonany sucet -> Cislo = False(Vyhybanie sa cyklickemu scitavaniu bez dalsieho cisla)
@@ -221,93 +247,110 @@ namespace Calculator
          */
         private void CalculatorGUI_KeyPress(object sender, KeyPressEventArgs e)
         {
-
-            switch (e.KeyChar.ToString())
+            if (result.Text != "Chyba: Delenie nulou")
             {
-                case "0":
-                    button_number0.PerformClick();
-                    break;
-                case "1":
-                    button_number1.PerformClick();
-                    break;
-                case "2":
-                    button_number2.PerformClick();
-                    break;
-                case "3":
-                    button_number3.PerformClick();
-                    break;
-                case "4":
-                    button_number4.PerformClick();
-                    break;
-                case "5":
-                    button_number5.PerformClick();
-                    break;
-                case "6":
-                    button_number6.PerformClick();
-                    break;
-                case "7":
-                    button_number7.PerformClick();
-                    break;
-                case "8":
-                    button_number8.PerformClick();
-                    
-                    break;
-                case "9":
-                    button_number9.PerformClick();
-                    break;
-                case "+":
-                    button_plus.PerformClick();
-                    break;
-                case "-":
-                    button_minus.PerformClick();
-                    break;
-                case "*":
-                    button_multiply.PerformClick();
-                    break;
-                case "/":
-                    button_divide.PerformClick();
-                    break;
-                case ".":
-                    button_dot.PerformClick();
-                    break;
-                case "\r":
-                    button_equals.PerformClick();
-                   break;
-                default:
-                    break;
+                switch (e.KeyChar.ToString())
+                {
+                    case "0":
+                        button_number0.PerformClick();
+                        break;
+                    case "1":
+                        button_number1.PerformClick();
+                        break;
+                    case "2":
+                        button_number2.PerformClick();
+                        break;
+                    case "3":
+                        button_number3.PerformClick();
+                        break;
+                    case "4":
+                        button_number4.PerformClick();
+                        break;
+                    case "5":
+                        button_number5.PerformClick();
+                        break;
+                    case "6":
+                        button_number6.PerformClick();
+                        break;
+                    case "7":
+                        button_number7.PerformClick();
+                        break;
+                    case "8":
+                        button_number8.PerformClick();
+
+                        break;
+                    case "9":
+                        button_number9.PerformClick();
+                        break;
+                    case "+":
+                        button_plus.PerformClick();
+                        break;
+                    case "-":
+                        button_minus.PerformClick();
+                        break;
+                    case "*":
+                        button_multiply.PerformClick();
+                        break;
+                    case "/":
+                        button_divide.PerformClick();
+                        break;
+                    case ".":
+                        button_dot.PerformClick();
+                        break;
+                    case "\r":
+                        button_equals.PerformClick();
+                        break;
+                    default:
+                        break;
+                }
             }
         }
 
 
         private void button_Square_Click(object sender, EventArgs e)
         {
-            value = MatLib.square(Double.Parse(result.Text)); //Pretypovanie Double->String
-            result.Text = (value).ToString(); //Pretypovanie Double->String
+            if (result.Text != "Chyba: Delenie nulou")
+            {
+                value = MatLib.square(Double.Parse(result.Text)); //Pretypovanie Double->String
+                result.Text = (value).ToString(); //Pretypovanie Double->String
+            }
         }
 
         private void button_sqrt_Click(object sender, EventArgs e)
         {
-            value = MatLib.sqrt(Double.Parse(result.Text)); //Pretypovanie Double->String
-            result.Text = (value).ToString(); //Pretypovanie Double->String
+            if (result.Text != "Chyba: Delenie nulou")
+            {
+                value = MatLib.sqrt(Double.Parse(result.Text)); //Pretypovanie Double->String
+                result.Text = (value).ToString(); //Pretypovanie Double->String
+            }
         }
 
         private void button_factorial_Click(object sender, EventArgs e)
         {
-            value = MatLib.factorial(int.Parse(result.Text)); //Pretypovanie int->String
-            result.Text = (value).ToString(); //Pretypovanie Double->String
+            if (result.Text != "Chyba: Delenie nulou")
+            {
+                value = MatLib.factorial(int.Parse(result.Text)); //Pretypovanie int->String
+                result.Text = (value).ToString(); //Pretypovanie Double->String
+            }
         }
 
         private void button_log_Click(object sender, EventArgs e)
         {
-            value = MatLib.log10(Double.Parse(result.Text)); //Pretypovanie Double->String
-            result.Text = (value).ToString(); //Pretypovanie Double->String
+            if (result.Text != "Chyba: Delenie nulou")
+            {
+                value = MatLib.log10(Double.Parse(result.Text)); //Pretypovanie Double->String
+                result.Text = (value).ToString(); //Pretypovanie Double->String
+            }
         }
 
         private void button_sign_Click(object sender, EventArgs e)
         {
-            double changed_number = 0;
-            changed_number = (-1) * (Double.Parse(result.Text)); //Pretypovanie Double->String
-            result.Text = (changed_number).ToString(); //Pretypovanie Double->String
+            if (result.Text != "Chyba: Delenie nulou")
+            {
+                double changed_number = 0;
+                changed_number = (-1) * (Double.Parse(result.Text)); //Pretypovanie Double->String
+                result.Text = (changed_number).ToString(); //Pretypovanie Double->String
+            }
         }
 
         private void button_C_Click(object sender, EventArgs e)
