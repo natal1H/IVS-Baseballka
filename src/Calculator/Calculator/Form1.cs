@@ -1,6 +1,7 @@
 /**
  * @note .NET Framework v4.0
  */
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -247,8 +248,6 @@ namespace Calculator
          */
         private void CalculatorGUI_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (result.Text != "Chyba: Delenie nulou")
-            {
                 switch (e.KeyChar.ToString())
                 {
                     case "0":
@@ -277,33 +276,50 @@ namespace Calculator
                         break;
                     case "8":
                         button_number8.PerformClick();
-
                         break;
                     case "9":
                         button_number9.PerformClick();
                         break;
                     case "+":
-                        button_plus.PerformClick();
+                        if (result.Text != "Chyba: Delenie nulou")
+                        {
+                            button_plus.PerformClick();
+                        }
                         break;
                     case "-":
-                        button_minus.PerformClick();
+                        if (result.Text != "Chyba: Delenie nulou")
+                        {
+                            button_minus.PerformClick();
+                        }
                         break;
                     case "*":
-                        button_multiply.PerformClick();
+                        if (result.Text != "Chyba: Delenie nulou")
+                        {
+                            button_multiply.PerformClick();
+                        }
                         break;
                     case "/":
-                        button_divide.PerformClick();
+                        if (result.Text != "Chyba: Delenie nulou")
+                        {
+                            button_divide.PerformClick();
+                        }
                         break;
                     case ".":
-                        button_dot.PerformClick();
+                        if (result.Text != "Chyba: Delenie nulou")
+                        {
+                            button_dot.PerformClick();
+                        }
                         break;
                     case "\r":
-                        button_equals.PerformClick();
+                        if (result.Text != "Chyba: Delenie nulou")
+                        {
+                            button_equals.PerformClick();
+                        }
                         break;
                     default:
                         break;
                 }
-            }
+            
         }
 
 
