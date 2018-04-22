@@ -2,6 +2,18 @@
  * @note .NET Framework v4.0
  */
 
+/**
+ * @date 30.3.2018 
+ * 
+ * @note .NET Framework v4.0
+ * 
+ * @bug Maximalne jedna matematicka operacia
+ *      Mocniny, odmocnina, log neimplementovane
+ *      Neimplementovana desatinna ciarka:
+ *         1)Je mozne vlozit nekonecne mnozsvo desatinnych ciarok(Prve zadanie cisla)
+ *         2)result.Clear pri zadani ciarky
+ *         3)Pod operande nie je mozne zadat dva a viac ciferne cislo
+ */
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -72,7 +84,7 @@ namespace Calculator
             {
                 result.Text = result.Text + Button_Name.Text;
             }
-            if (number_pressed == true)
+            if (number_pressed == true && operation_pressed == true)
             {
                 second_number_pressed = true;
             }
