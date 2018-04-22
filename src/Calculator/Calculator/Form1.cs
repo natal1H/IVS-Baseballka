@@ -41,7 +41,7 @@ namespace Calculator
              * (operation_pressed) -> Zmaze cislo pri zadavani dalsieho s mat. operaciou
              * Priklad: "'356' '+' '356211'" -> "'356' '+' '211'"
              */
-            if (((result.Text == "0") || (operation_pressed) || (equal_pressed)) && ((!(result.Text == ",")) || (!(result.Text == "0,"))))
+            if (((result.Text == "0") || (operation_pressed) || (equal_pressed)) && ((!(result.Text == ",")) || (!(result.Text == "0,"))) || result.Text == "Chyba")
             {
                 result.Clear(); //Zmaze cislo po zadani operacie
                 operation_pressed = false; //Dalsie cislo nezmazat -> Nepotrebny udaj -> False
@@ -97,7 +97,7 @@ namespace Calculator
          */
         private void Operator_click(object sender, EventArgs e)
         {
-            if (result.Text != "Chyba: Delenie nulou")
+            if (result.Text != "Chyba")
             {
                 if (number_pressed == true && second_number_pressed)
                 {
@@ -133,7 +133,7 @@ namespace Calculator
                             {
                                 if (result.Text == "0")
                                 {
-                                    result.Text = "Chyba: Delenie nulou";
+                                    result.Text = "Chyba";
                                     number_pressed = false;
                                     second_number_pressed = false;
                                 }
@@ -160,7 +160,7 @@ namespace Calculator
             }
             Button Button_Name = (Button)sender;
             operation = Button_Name.Text; //Operacia podla nazvu tlacitka
-            if (result.Text != "Chyba: Delenie nulou")
+            if (result.Text != "Chyba")
             {
                 value = Double.Parse(result.Text); //Pretypovanie String->Double
 
@@ -186,7 +186,7 @@ namespace Calculator
             { //Osetrenie duplicity vysledku po kombinacii "5" + "6" "+" "="
                 value = 0;
             }
-            if (result.Text != "Chyba: Delenie nulou")
+            if (result.Text != "Chyba")
             {
                 switch (operation)
                 {
@@ -209,7 +209,7 @@ namespace Calculator
                         //value = (value / Double.Parse(result.Text)); //Pretypovanie Double->String
                         if (result.Text == "0")
                         {
-                            result.Text = "Chyba: Delenie nulou";
+                            result.Text = "Chyba";
                             number_pressed = false;
                             second_number_pressed = false;
                         }
@@ -281,37 +281,37 @@ namespace Calculator
                         button_number9.PerformClick();
                         break;
                     case "+":
-                        if (result.Text != "Chyba: Delenie nulou")
+                        if (result.Text != "Chyba")
                         {
                             button_plus.PerformClick();
                         }
                         break;
                     case "-":
-                        if (result.Text != "Chyba: Delenie nulou")
+                        if (result.Text != "Chyba")
                         {
                             button_minus.PerformClick();
                         }
                         break;
                     case "*":
-                        if (result.Text != "Chyba: Delenie nulou")
+                        if (result.Text != "Chyba")
                         {
                             button_multiply.PerformClick();
                         }
                         break;
                     case "/":
-                        if (result.Text != "Chyba: Delenie nulou")
+                        if (result.Text != "Chyba")
                         {
                             button_divide.PerformClick();
                         }
                         break;
                     case ".":
-                        if (result.Text != "Chyba: Delenie nulou")
+                        if (result.Text != "Chyba")
                         {
                             button_dot.PerformClick();
                         }
                         break;
                     case "\r":
-                        if (result.Text != "Chyba: Delenie nulou")
+                        if (result.Text != "Chyba")
                         {
                             button_equals.PerformClick();
                         }
@@ -325,7 +325,7 @@ namespace Calculator
 
         private void button_Square_Click(object sender, EventArgs e)
         {
-            if (result.Text != "Chyba: Delenie nulou")
+            if (result.Text != "Chyba")
             {
                 value = MatLib.square(Double.Parse(result.Text)); //Pretypovanie Double->String
                 result.Text = (value).ToString(); //Pretypovanie Double->String
@@ -334,7 +334,7 @@ namespace Calculator
 
         private void button_sqrt_Click(object sender, EventArgs e)
         {
-            if (result.Text != "Chyba: Delenie nulou")
+            if (result.Text != "Chyba")
             {
                 value = MatLib.sqrt(Double.Parse(result.Text)); //Pretypovanie Double->String
                 result.Text = (value).ToString(); //Pretypovanie Double->String
@@ -343,7 +343,7 @@ namespace Calculator
 
         private void button_factorial_Click(object sender, EventArgs e)
         {
-            if (result.Text != "Chyba: Delenie nulou")
+            if (result.Text != "Chyba")
             {
                 value = MatLib.factorial(int.Parse(result.Text)); //Pretypovanie int->String
                 result.Text = (value).ToString(); //Pretypovanie Double->String
@@ -352,16 +352,24 @@ namespace Calculator
 
         private void button_log_Click(object sender, EventArgs e)
         {
-            if (result.Text != "Chyba: Delenie nulou")
+            if ((result.Text != "Chyba") && (int.Parse(result.Text) > 0))
             {
                 value = MatLib.log10(Double.Parse(result.Text)); //Pretypovanie Double->String
                 result.Text = (value).ToString(); //Pretypovanie Double->String
+            }
+            else
+            {
+                result.Text = "Chyba";
+                number_pressed = false;
+                second_number_pressed = false;
+                value = 0;
+                equal_pressed = false;
             }
         }
 
         private void button_sign_Click(object sender, EventArgs e)
         {
-            if (result.Text != "Chyba: Delenie nulou")
+            if (result.Text != "Chyba")
             {
                 double changed_number = 0;
                 changed_number = (-1) * (Double.Parse(result.Text)); //Pretypovanie Double->String
