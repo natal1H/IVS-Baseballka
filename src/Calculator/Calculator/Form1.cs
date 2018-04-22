@@ -1,8 +1,6 @@
 /**
  * @date 12.4.2018 
- * 
  * @note .NET Framework v4.0
- * @todo Pridať zachytenie výnimiek pri operáciach (delenie nulou apod)
  */
 
 using System;
@@ -90,7 +88,9 @@ namespace Calculator
             result.Text = "0";
             value = 0;
             number_pressed = false;
+            second_number_pressed = false;
             operation_pressed = false;
+            equal_pressed = false;
         }
 
         /**
@@ -308,7 +308,12 @@ namespace Calculator
             double changed_number = 0;
             changed_number = (-1) * (Double.Parse(result.Text)); //Pretypovanie Double->String
             result.Text = (changed_number).ToString(); //Pretypovanie Double->String
-        }   
+        }
+
+        private void button_C_Click(object sender, EventArgs e)
+        {
+            result.Text = "0";
+        }
     }
   
 }
