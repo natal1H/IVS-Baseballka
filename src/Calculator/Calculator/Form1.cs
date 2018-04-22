@@ -2,6 +2,7 @@
  * @note .NET Framework v4.0
  */
 
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -343,8 +344,10 @@ namespace Calculator
 
         private void button_factorial_Click(object sender, EventArgs e)
         {
+            int Kontrola = 0;
+            bool Vysledok = Int32.TryParse(result.Text, out Kontrola);
 
-            if (int.Parse(result.Text) >= 0)
+            if (Vysledok == true)
             {
                 if (result.Text != "Chyba")
                 {
