@@ -24,6 +24,7 @@ namespace Calculator
         String operation = ""; //Ziadny operator
         bool operation_pressed = false; //Ziadna operacia
         bool number_pressed = false;
+        bool second_number_pressed = false;
         bool equal_pressed = false;
         public CalculatorGUI()
         {
@@ -74,6 +75,10 @@ namespace Calculator
             {
                 result.Text = result.Text + Button_Name.Text;
             }
+            if (number_pressed == true)
+            {
+                second_number_pressed = true;
+            }
             number_pressed = true;
         }
 
@@ -93,7 +98,7 @@ namespace Calculator
          */
         private void Operator_click(object sender, EventArgs e)
         {
-            if (number_pressed == true)
+            if (number_pressed == true && second_number_pressed)
             {
 
                 // TODO Zlucenie s Button_equals_Click?
@@ -104,21 +109,31 @@ namespace Calculator
                         //value = (value + Double.Parse(result.Text)); //Pretypovanie Double->String
                         value = MatLib.add(value, Double.Parse(result.Text)); //Pretypovanie Double->String
                         result.Text = (value).ToString(); //Pretypovanie Double->String
+                        second_number_pressed = false; //Vykonany operator -> Druhe cislo = False(Vyhybanie sa cyklicej operacii bez dalsieho cisla)
                         break;
                     case "-":
                         //value = (value - Double.Parse(result.Text)); //Pretypovanie Double->String
-                        value = MatLib.subtract(value, Double.Parse(result.Text)); //Pretypovanie Double->String
+                        value = MatLib.subtract(Double.Parse(result.Text), value); //Pretypovanie Double->String
                         result.Text = (value).ToString(); //Pretypovanie Double->String
+                        second_number_pressed = false; //Vykonany operator -> Druhe cislo = False(Vyhybanie sa cyklicej operacii bez dalsieho cisla)
                         break;
                     case "*":
                         //value = (value * Double.Parse(result.Text)); //Pretypovanie Double->String
-                        value = MatLib.multiply(value, Double.Parse(result.Text)); //Pretypovanie Double->String
-                        result.Text = (value).ToString(); //Pretypovanie Double->String
+                        if (second_number_pressed == true)
+                        {
+                            value = MatLib.multiply(value, Double.Parse(result.Text)); //Pretypovanie Double->String
+                            result.Text = (value).ToString(); //Pretypovanie Double->String
+                            second_number_pressed = false; //Vykonany operator -> Druhe cislo = False(Vyhybanie sa cyklicej operacii bez dalsieho cisla)
+                        }
                         break;
                     case "/":
                         //value = (value / Double.Parse(result.Text)); //Pretypovanie Double->String
-                        value = MatLib.divide(value, Double.Parse(result.Text)); //Pretypovanie Double->String
-                        result.Text = (value).ToString(); //Pretypovanie Double->String
+                        if (second_number_pressed == true)
+                        {
+                            value = MatLib.divide(value, Double.Parse(result.Text)); //Pretypovanie Double->String
+                            result.Text = (value).ToString(); //Pretypovanie Double->String
+                            second_number_pressed = false; //Vykonany operator -> Druhe cislo = False(Vyhybanie sa cyklicej operacii bez dalsieho cisla)
+                        }
                         break;
                     case "xʸ":
                         value = MatLib.power(value, int.Parse(result.Text)); //Pretypovanie Integer->String
@@ -136,7 +151,8 @@ namespace Calculator
             operation = Button_Name.Text; //Operacia podla nazvu tlacitka
             value = Double.Parse(result.Text); //Pretypovanie String->Double
             operation_pressed = true; //Operacia vykonana
-            number_pressed = false; //Vykonany operator -> Cislo = False(Vyhybanie sa cyklicej operacii bez dalsieho cisla)
+            //number_pressed = false; //Vykonany operator -> Cislo = False(Vyhybanie sa cyklicej operacii bez dalsieho cisla)
+            //equal_pressed = false;
 
         }
 
@@ -188,7 +204,8 @@ namespace Calculator
             }
             value = 0; //Nulovanie vysledku a zabranenie duplicite pri viacnasobnej rovnakej operacii
             number_pressed = false; //Vykonany sucet -> Cislo = False(Vyhybanie sa cyklickemu scitavaniu bez dalsieho cisla)
-            //operation = "";
+            second_number_pressed = false;
+            //operation_pressed = false; //nove
             equal_pressed = true;
         }
 
@@ -233,6 +250,7 @@ namespace Calculator
                     break;
                 case "8":
                     button_number8.PerformClick();
+                    
                     break;
                 case "9":
                     button_number9.PerformClick();
@@ -252,13 +270,14 @@ namespace Calculator
                 case ".":
                     button_dot.PerformClick();
                     break;
-                //case "ENTER":
-                //    button_equals.PerformClick();
-                //   break;
+                case "\r":
+                    button_equals.PerformClick();
+                   break;
                 default:
                     break;
             }
         }
+
 
         private void button_Square_Click(object sender, EventArgs e)
         {
@@ -289,6 +308,7 @@ namespace Calculator
             double changed_number = 0;
             changed_number = (-1) * (Double.Parse(result.Text)); //Pretypovanie Double->String
             result.Text = (changed_number).ToString(); //Pretypovanie Double->String
-        }
+        }   
     }
+  
 }
