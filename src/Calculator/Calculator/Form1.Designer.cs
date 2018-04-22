@@ -259,6 +259,7 @@ namespace Calculator
             this.button_C.TabStop = false;
             this.button_C.Text = "C";
             this.button_C.UseVisualStyleBackColor = false;
+            this.button_C.Click += new System.EventHandler(this.button_C_Click);
             // 
             // button_CE
             // 
@@ -288,7 +289,6 @@ namespace Calculator
             this.button_equals.Text = "=";
             this.button_equals.UseVisualStyleBackColor = false;
             this.button_equals.Click += new System.EventHandler(this.Button_equals_Click);
-            this.AcceptButton = button_equals;
             // 
             // result
             // 
