@@ -1,4 +1,4 @@
-﻿xbalif00 100 (GUI, prepojenie GUI s matematickou knižnicou)
-xholko02 100 (matematická knižnica, mockup, profiling)
-xnovak2f 100 (testy)
-xshama00 100 (doxygen, inštalátor/odinštalátor, užívateľská dokumentácia)
+﻿xbalif00 110 (GUI, prepojenie GUI s matematickou knižnicou)
+xholko02 110 (matematická knižnica, mockup, profiling)
+xnovak2f 90 (testy)
+xshama00 90 (doxygen, inštalátor/odinštalátor, užívateľská dokumentácia)
