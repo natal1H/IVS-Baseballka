@@ -1,14 +1,39 @@
-﻿using System;
+﻿/**************************************************
+ * Názov projektu: Tests
+ * Súbor: MatLibTest.cs
+ * Dátum: 10.4.2018
+ * Posledná zmena: 23.4.2018
+ * Autor: Matej Novák xnovak2f(at)fit.vutbr.cz
+ * 
+ * Popis: Testy matematickej knižnice
+ * 
+ ***************************************************
+/**
+ * @file MatLibTest.cs
+ * 
+ * @brief Trieda MatLibTest - Testy matematickej knižnice
+ * @author Matej Novák (xnovak2f)
+ * 
+ * @note .NET Framework v4.5
+ */
+
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Calculator;
 
 namespace Tests
 {
+    /**
+     * @class Trieda testov matematických operácií
+     */
     [TestClass]
     public class MatLibTest
     {
-        private const double Accuracy = 1e-7;
+        private const double Accuracy = 1e-7; /*!< Konštanta určujúca povolenú odchylku */
 
+        /**
+         * @test Testuje sčítanie dvoch reálnych čísel
+         */
         [TestMethod]
         public void ShouldAdd()
         {
@@ -26,6 +51,9 @@ namespace Tests
             Assert.AreNotEqual(11.41676488, MatLib.add(4.9993192, 6.99944568), Accuracy);
         }
 
+        /**
+         * @test Testuje odčítanie dvoch reálnych čísel (druhého od prvého)
+         */
         [TestMethod]
         public void ShouldSubtract()
         {
@@ -45,6 +73,9 @@ namespace Tests
             Assert.AreNotEqual(-50, MatLib.subtract(0, -50.0000357));
         }
 
+        /**
+         * @test Testuje násobenie dvoch reálnych čísel
+         */
         [TestMethod]
         public void ShouldMultiply()
         {
@@ -69,6 +100,9 @@ namespace Tests
             Assert.AreNotEqual(-0.002, MatLib.multiply(0.0002, -0.1), Accuracy);
         }
 
+        /**
+         * @test Testuje operáciu delenia dvoch reálnych čísel (prvého druhým)
+         */
         [TestMethod]
         public void ShouldDivide()
         {
@@ -105,7 +139,10 @@ namespace Tests
             Assert.AreNotEqual(0.4, MatLib.divide(0.1601, 4));
             Assert.AreNotEqual(10, MatLib.divide(0, 10));
         }
-
+    
+        /**
+         * @test Testuje operáciu vytvorenia faktoriálú prirodzeného čísla
+         */
         [TestMethod]
         public void ShouldFactorial()
         {
@@ -125,6 +162,9 @@ namespace Tests
             }
         }
 
+        /**
+         * @test Testuje operáciu vytvorenia druhej mocniny reálneho čísla
+         */
         [TestMethod]
         public void ShouldSquare()
         {
@@ -140,6 +180,9 @@ namespace Tests
             Assert.AreNotEqual(16, MatLib.square(4.1), Accuracy);
         }
 
+        /**
+         * @test Testuje operáciu umocnenia reálneho čísla na prirodzený exponent
+         */
         [TestMethod]
         public void ShouldPower()
         {
@@ -154,6 +197,10 @@ namespace Tests
             Assert.AreEqual(27, MatLib.power(3, 3));
             Assert.AreEqual(-27, MatLib.power(-3, 3));
             Assert.AreEqual(81, MatLib.power(-3, 4));
+            Assert.AreEqual(2.25, MatLib.power(1.5, 2), Accuracy);
+            Assert.AreEqual(915.0625, MatLib.power(5.5, 4), Accuracy);
+            Assert.AreEqual(915.0625, MatLib.power(-5.5, 4), Accuracy);
+            Assert.AreEqual(-5032.84375, MatLib.power(-5.5, 5), Accuracy);
 
             Assert.AreNotEqual(105, MatLib.power(10, 3));
 
@@ -167,6 +214,9 @@ namespace Tests
             }
         }
 
+        /**
+         * @test Testuje operáciu vytvorenia druhej odmocniny čísla
+         */
         [TestMethod]
         public void ShouldSqrt()
         {
@@ -176,6 +226,7 @@ namespace Tests
             Assert.AreEqual(5, MatLib.sqrt(25));
             Assert.AreEqual(0.707106781186547, MatLib.sqrt(0.5), Accuracy);
             Assert.AreEqual(387.2989801174281, MatLib.sqrt(150000.5), Accuracy);
+
             Assert.AreNotEqual(1000, MatLib.sqrt(999999), Accuracy);
 
             try
@@ -188,6 +239,9 @@ namespace Tests
             }
         }
 
+        /**
+         * @test Testuje operáciu odmocnenia reálneho čísla celým číslom
+         */
         [TestMethod]
         public void ShouldGenroot()
         {
@@ -220,6 +274,9 @@ namespace Tests
             }
         }
 
+        /**
+         * @test Testuje operáciu vytvorenia logaritmu pri základe 10 z kladného nenulového reálneho čísla
+         */
         [TestMethod]
         public void ShouldLog10()
         {
@@ -251,3 +308,6 @@ namespace Tests
         }
     }
 }
+
+/*** Koniec súboru MatLibTest.cs ***/
+
