@@ -1,4 +1,4 @@
-xlogin01 100 (základ GUI a základní mat. operace)
-xlogin02 100 (pokročilé mat. operace)
-xlogin03 90 (profiling, instalátor)
-xlogin04 110 (testy, dokumentace)
+﻿xbalif00 100 (GUI, prepojenie GUI s matematickou knižnicou)
+xholko02 100 (matematická knižnica, mockup, profiling)
+xnovak2f 100 (testy)
+xshama00 100 (doxygen, inštalátor/odinštalátor, užívateľská dokumentácia)
