@@ -1,10 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+﻿/**************************************************
+ * Názov projektu: Kalkulačka - mockup
+ * Súbor: Form2.cs
+ * Dátum: 23.4.2018
+ * Posledná zmena: 23.4.2018
+ * Autor: Natália Holková xholko02(at)fit.vutbr.cz
+ * 
+ * Popis: Mockup kalkulačky
+ * 
+ ***************************************************
+/**
+ * @file Form1.cs
+ * 
+ * @brief Okno vedeckého módu kalkulačky
+ * @author Natália Holková (xholko02)
+ * 
+ */
+
+using System;
 using System.Windows.Forms;
 
 namespace CalculatorMockup
@@ -12,6 +24,10 @@ namespace CalculatorMockup
     public partial class Form2 : Form
     {
         private bool shift_pressed;
+
+        /**
+         * @brief Konštruktor Form2
+         */
         public Form2()
         {
             InitializeComponent();
@@ -23,6 +39,12 @@ namespace CalculatorMockup
             shift_pressed = false;
         }
 
+        /**
+         * @brief Prepnutie na štandartný mód
+         * 
+         * @param sender
+         * @param e
+         */
         private void standartToolStripMenuItem_Click(object sender, EventArgs e)
         {
             (new Form1()).Show();
@@ -30,6 +52,12 @@ namespace CalculatorMockup
             this.Close();
         }
 
+        /**
+         * @brief Prepnutie na grafický mód
+         * 
+         * @param sender
+         * @param e
+         */
         private void grafickýToolStripMenuItem_Click(object sender, EventArgs e)
         {
             (new Form3()).Show();
@@ -37,6 +65,12 @@ namespace CalculatorMockup
             this.Close();
         }
 
+        /**
+         * @brief Prepnutie na štatistický mód
+         * 
+         * @param sender
+         * @param e
+         */
         private void štatistickýToolStripMenuItem_Click(object sender, EventArgs e)
         {
             (new Form4()).Show();
@@ -44,6 +78,12 @@ namespace CalculatorMockup
             this.Close();
         }
 
+        /**
+         * @brief Ukončenie okna
+         * 
+         * @param sender
+         * @param e
+         */
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
@@ -52,6 +92,12 @@ namespace CalculatorMockup
             }
         }
 
+        /**
+         * @brief Prepnutie tlačítok pomocou shift
+         * 
+         * @param sender
+         * @param e
+         */
         private void button31_Click(object sender, EventArgs e)
         {
             if (shift_pressed == true)

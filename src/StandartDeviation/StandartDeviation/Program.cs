@@ -1,17 +1,31 @@
-﻿/**
+﻿/**************************************************
+ * Názov projektu: Kalkulačka - časť výpočet smerodajnej odchýlky
+ * Súbor: Program.cs
+ * Dátum: 23.4.2018
+ * Posledná zmena: 23.4.2018
+ * Autor: Natália Holková xholko02(at)fit.vutbr.cz
+ * 
+ * Popis: Výpočet smerodajnej odchýlky
+ * 
+ ***************************************************
+/**
  * @file Program.cs
  * 
+ * @brief Program na výpočet smerodajnej odchýlky
+ * @author Natália Holková (xholko02)
+ * 
+ * @note .NET Framework v4.0
  */
 
 using System;
 using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using StandartDeviation;
 using Calculator;
 
 namespace StandartDeviation
 {
+    /**
+     * @class Trieda na výpočet smerodajnej odchýlky
+     */
     class Program
     {
         /**

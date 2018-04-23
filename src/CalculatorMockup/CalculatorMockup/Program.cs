@@ -1,4 +1,22 @@
-﻿using System;
+﻿/**************************************************
+ * Názov projektu: Kalkulačka - mockup
+ * Súbor: Program.cs
+ * Dátum: 23.4.2018
+ * Posledná zmena: 23.4.2018
+ * Autor: Natália Holková xholko02(at)fit.vutbr.cz
+ * 
+ * Popis: Mockup kalkulačky
+ * 
+ ***************************************************
+/**
+ * @file Program.cs
+ * 
+ * @brief Mockup - spustenie
+ * @author Natália Holková (xholko02)
+ * 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
