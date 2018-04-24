@@ -429,6 +429,11 @@ namespace Calculator
         {
             result.Text = "0";
         }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new Form2()).Show();
+        }
     }
 
   

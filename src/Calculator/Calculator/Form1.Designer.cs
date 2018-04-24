@@ -54,15 +54,18 @@ namespace Calculator
             this.button1 = new System.Windows.Forms.Button();
             this.button_factorial = new System.Windows.Forms.Button();
             this.button_sign = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button_number7
             // 
             this.button_number7.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
-            this.button_number7.Location = new System.Drawing.Point(331, 160);
-            this.button_number7.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.button_number7.Location = new System.Drawing.Point(165, 112);
+            this.button_number7.Margin = new System.Windows.Forms.Padding(4);
             this.button_number7.Name = "button_number7";
-            this.button_number7.Size = new System.Drawing.Size(133, 119);
+            this.button_number7.Size = new System.Drawing.Size(66, 61);
             this.button_number7.TabIndex = 0;
             this.button_number7.TabStop = false;
             this.button_number7.Text = "7";
@@ -72,10 +75,10 @@ namespace Calculator
             // button_number8
             // 
             this.button_number8.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
-            this.button_number8.Location = new System.Drawing.Point(480, 160);
-            this.button_number8.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.button_number8.Location = new System.Drawing.Point(239, 112);
+            this.button_number8.Margin = new System.Windows.Forms.Padding(4);
             this.button_number8.Name = "button_number8";
-            this.button_number8.Size = new System.Drawing.Size(133, 119);
+            this.button_number8.Size = new System.Drawing.Size(66, 61);
             this.button_number8.TabIndex = 1;
             this.button_number8.TabStop = false;
             this.button_number8.Text = "8";
@@ -86,10 +89,10 @@ namespace Calculator
             // 
             this.button_number9.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
             this.button_number9.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button_number9.Location = new System.Drawing.Point(629, 160);
-            this.button_number9.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.button_number9.Location = new System.Drawing.Point(313, 112);
+            this.button_number9.Margin = new System.Windows.Forms.Padding(4);
             this.button_number9.Name = "button_number9";
-            this.button_number9.Size = new System.Drawing.Size(133, 119);
+            this.button_number9.Size = new System.Drawing.Size(66, 61);
             this.button_number9.TabIndex = 2;
             this.button_number9.TabStop = false;
             this.button_number9.Text = "9";
@@ -99,10 +102,10 @@ namespace Calculator
             // button_number4
             // 
             this.button_number4.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
-            this.button_number4.Location = new System.Drawing.Point(331, 293);
-            this.button_number4.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.button_number4.Location = new System.Drawing.Point(165, 180);
+            this.button_number4.Margin = new System.Windows.Forms.Padding(4);
             this.button_number4.Name = "button_number4";
-            this.button_number4.Size = new System.Drawing.Size(133, 119);
+            this.button_number4.Size = new System.Drawing.Size(66, 61);
             this.button_number4.TabIndex = 3;
             this.button_number4.TabStop = false;
             this.button_number4.Text = "4";
@@ -113,10 +116,10 @@ namespace Calculator
             // 
             this.button_number5.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button_number5.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
-            this.button_number5.Location = new System.Drawing.Point(480, 293);
-            this.button_number5.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.button_number5.Location = new System.Drawing.Point(239, 180);
+            this.button_number5.Margin = new System.Windows.Forms.Padding(4);
             this.button_number5.Name = "button_number5";
-            this.button_number5.Size = new System.Drawing.Size(133, 119);
+            this.button_number5.Size = new System.Drawing.Size(66, 61);
             this.button_number5.TabIndex = 4;
             this.button_number5.TabStop = false;
             this.button_number5.Text = "5";
@@ -126,10 +129,10 @@ namespace Calculator
             // button_number6
             // 
             this.button_number6.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
-            this.button_number6.Location = new System.Drawing.Point(629, 293);
-            this.button_number6.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.button_number6.Location = new System.Drawing.Point(313, 180);
+            this.button_number6.Margin = new System.Windows.Forms.Padding(4);
             this.button_number6.Name = "button_number6";
-            this.button_number6.Size = new System.Drawing.Size(133, 119);
+            this.button_number6.Size = new System.Drawing.Size(66, 61);
             this.button_number6.TabIndex = 5;
             this.button_number6.TabStop = false;
             this.button_number6.Text = "6";
@@ -139,10 +142,10 @@ namespace Calculator
             // button_number1
             // 
             this.button_number1.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
-            this.button_number1.Location = new System.Drawing.Point(331, 427);
-            this.button_number1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.button_number1.Location = new System.Drawing.Point(165, 249);
+            this.button_number1.Margin = new System.Windows.Forms.Padding(4);
             this.button_number1.Name = "button_number1";
-            this.button_number1.Size = new System.Drawing.Size(133, 119);
+            this.button_number1.Size = new System.Drawing.Size(66, 61);
             this.button_number1.TabIndex = 6;
             this.button_number1.TabStop = false;
             this.button_number1.Text = "1";
@@ -152,10 +155,10 @@ namespace Calculator
             // button_number2
             // 
             this.button_number2.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
-            this.button_number2.Location = new System.Drawing.Point(480, 427);
-            this.button_number2.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.button_number2.Location = new System.Drawing.Point(239, 249);
+            this.button_number2.Margin = new System.Windows.Forms.Padding(4);
             this.button_number2.Name = "button_number2";
-            this.button_number2.Size = new System.Drawing.Size(133, 119);
+            this.button_number2.Size = new System.Drawing.Size(66, 61);
             this.button_number2.TabIndex = 7;
             this.button_number2.TabStop = false;
             this.button_number2.Text = "2";
@@ -165,10 +168,10 @@ namespace Calculator
             // button_number3
             // 
             this.button_number3.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
-            this.button_number3.Location = new System.Drawing.Point(629, 427);
-            this.button_number3.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.button_number3.Location = new System.Drawing.Point(313, 249);
+            this.button_number3.Margin = new System.Windows.Forms.Padding(4);
             this.button_number3.Name = "button_number3";
-            this.button_number3.Size = new System.Drawing.Size(133, 119);
+            this.button_number3.Size = new System.Drawing.Size(66, 61);
             this.button_number3.TabIndex = 8;
             this.button_number3.TabStop = false;
             this.button_number3.Text = "3";
@@ -178,10 +181,10 @@ namespace Calculator
             // button_number0
             // 
             this.button_number0.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
-            this.button_number0.Location = new System.Drawing.Point(331, 560);
-            this.button_number0.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.button_number0.Location = new System.Drawing.Point(165, 318);
+            this.button_number0.Margin = new System.Windows.Forms.Padding(4);
             this.button_number0.Name = "button_number0";
-            this.button_number0.Size = new System.Drawing.Size(283, 119);
+            this.button_number0.Size = new System.Drawing.Size(142, 61);
             this.button_number0.TabIndex = 9;
             this.button_number0.TabStop = false;
             this.button_number0.Text = "0";
@@ -191,10 +194,10 @@ namespace Calculator
             // button_dot
             // 
             this.button_dot.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
-            this.button_dot.Location = new System.Drawing.Point(629, 560);
-            this.button_dot.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.button_dot.Location = new System.Drawing.Point(313, 318);
+            this.button_dot.Margin = new System.Windows.Forms.Padding(4);
             this.button_dot.Name = "button_dot";
-            this.button_dot.Size = new System.Drawing.Size(133, 119);
+            this.button_dot.Size = new System.Drawing.Size(66, 61);
             this.button_dot.TabIndex = 10;
             this.button_dot.TabStop = false;
             this.button_dot.Text = ",";
@@ -206,10 +209,10 @@ namespace Calculator
             this.button_divide.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button_divide.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_divide.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
-            this.button_divide.Location = new System.Drawing.Point(779, 293);
-            this.button_divide.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.button_divide.Location = new System.Drawing.Point(389, 180);
+            this.button_divide.Margin = new System.Windows.Forms.Padding(4);
             this.button_divide.Name = "button_divide";
-            this.button_divide.Size = new System.Drawing.Size(133, 119);
+            this.button_divide.Size = new System.Drawing.Size(66, 61);
             this.button_divide.TabIndex = 11;
             this.button_divide.TabStop = false;
             this.button_divide.Text = "/";
@@ -221,10 +224,10 @@ namespace Calculator
             this.button_minus.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button_minus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_minus.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
-            this.button_minus.Location = new System.Drawing.Point(779, 560);
-            this.button_minus.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.button_minus.Location = new System.Drawing.Point(389, 318);
+            this.button_minus.Margin = new System.Windows.Forms.Padding(4);
             this.button_minus.Name = "button_minus";
-            this.button_minus.Size = new System.Drawing.Size(133, 119);
+            this.button_minus.Size = new System.Drawing.Size(66, 61);
             this.button_minus.TabIndex = 12;
             this.button_minus.TabStop = false;
             this.button_minus.Text = "-";
@@ -236,10 +239,10 @@ namespace Calculator
             this.button_plus.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button_plus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_plus.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
-            this.button_plus.Location = new System.Drawing.Point(779, 427);
-            this.button_plus.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.button_plus.Location = new System.Drawing.Point(389, 249);
+            this.button_plus.Margin = new System.Windows.Forms.Padding(4);
             this.button_plus.Name = "button_plus";
-            this.button_plus.Size = new System.Drawing.Size(133, 119);
+            this.button_plus.Size = new System.Drawing.Size(66, 61);
             this.button_plus.TabIndex = 13;
             this.button_plus.TabStop = false;
             this.button_plus.Text = "+";
@@ -252,10 +255,10 @@ namespace Calculator
             this.button_multiply.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button_multiply.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_multiply.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
-            this.button_multiply.Location = new System.Drawing.Point(779, 160);
-            this.button_multiply.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.button_multiply.Location = new System.Drawing.Point(389, 112);
+            this.button_multiply.Margin = new System.Windows.Forms.Padding(4);
             this.button_multiply.Name = "button_multiply";
-            this.button_multiply.Size = new System.Drawing.Size(133, 119);
+            this.button_multiply.Size = new System.Drawing.Size(66, 61);
             this.button_multiply.TabIndex = 14;
             this.button_multiply.TabStop = false;
             this.button_multiply.Text = "*";
@@ -267,10 +270,10 @@ namespace Calculator
             this.button_C.BackColor = System.Drawing.Color.Coral;
             this.button_C.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_C.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
-            this.button_C.Location = new System.Drawing.Point(928, 293);
-            this.button_C.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.button_C.Location = new System.Drawing.Point(463, 180);
+            this.button_C.Margin = new System.Windows.Forms.Padding(4);
             this.button_C.Name = "button_C";
-            this.button_C.Size = new System.Drawing.Size(133, 119);
+            this.button_C.Size = new System.Drawing.Size(66, 61);
             this.button_C.TabIndex = 15;
             this.button_C.TabStop = false;
             this.button_C.Text = "C";
@@ -282,10 +285,10 @@ namespace Calculator
             this.button_CE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(72)))), ((int)(((byte)(52)))));
             this.button_CE.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_CE.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
-            this.button_CE.Location = new System.Drawing.Point(928, 160);
-            this.button_CE.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.button_CE.Location = new System.Drawing.Point(463, 112);
+            this.button_CE.Margin = new System.Windows.Forms.Padding(4);
             this.button_CE.Name = "button_CE";
-            this.button_CE.Size = new System.Drawing.Size(133, 119);
+            this.button_CE.Size = new System.Drawing.Size(66, 61);
             this.button_CE.TabIndex = 16;
             this.button_CE.TabStop = false;
             this.button_CE.Text = "CE";
@@ -298,10 +301,10 @@ namespace Calculator
             this.button_equals.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button_equals.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_equals.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
-            this.button_equals.Location = new System.Drawing.Point(928, 427);
-            this.button_equals.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.button_equals.Location = new System.Drawing.Point(463, 249);
+            this.button_equals.Margin = new System.Windows.Forms.Padding(4);
             this.button_equals.Name = "button_equals";
-            this.button_equals.Size = new System.Drawing.Size(133, 253);
+            this.button_equals.Size = new System.Drawing.Size(66, 131);
             this.button_equals.TabIndex = 17;
             this.button_equals.TabStop = false;
             this.button_equals.Text = "=";
@@ -311,11 +314,11 @@ namespace Calculator
             // result
             // 
             this.result.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.result.Location = new System.Drawing.Point(32, 29);
-            this.result.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.result.Location = new System.Drawing.Point(15, 44);
+            this.result.Margin = new System.Windows.Forms.Padding(4);
             this.result.Name = "result";
             this.result.ReadOnly = true;
-            this.result.Size = new System.Drawing.Size(1023, 98);
+            this.result.Size = new System.Drawing.Size(514, 53);
             this.result.TabIndex = 18;
             this.result.TabStop = false;
             this.result.Text = "0";
@@ -327,10 +330,10 @@ namespace Calculator
             this.button_power.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button_power.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_power.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
-            this.button_power.Location = new System.Drawing.Point(32, 293);
-            this.button_power.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.button_power.Location = new System.Drawing.Point(15, 180);
+            this.button_power.Margin = new System.Windows.Forms.Padding(4);
             this.button_power.Name = "button_power";
-            this.button_power.Size = new System.Drawing.Size(133, 119);
+            this.button_power.Size = new System.Drawing.Size(66, 61);
             this.button_power.TabIndex = 19;
             this.button_power.TabStop = false;
             this.button_power.Text = "xʸ";
@@ -342,10 +345,10 @@ namespace Calculator
             this.button_Square.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button_Square.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_Square.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
-            this.button_Square.Location = new System.Drawing.Point(32, 160);
-            this.button_Square.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.button_Square.Location = new System.Drawing.Point(15, 112);
+            this.button_Square.Margin = new System.Windows.Forms.Padding(4);
             this.button_Square.Name = "button_Square";
-            this.button_Square.Size = new System.Drawing.Size(133, 119);
+            this.button_Square.Size = new System.Drawing.Size(66, 61);
             this.button_Square.TabIndex = 20;
             this.button_Square.TabStop = false;
             this.button_Square.Text = "x²";
@@ -357,10 +360,10 @@ namespace Calculator
             this.button_sqrt.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button_sqrt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_sqrt.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
-            this.button_sqrt.Location = new System.Drawing.Point(181, 160);
-            this.button_sqrt.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.button_sqrt.Location = new System.Drawing.Point(89, 112);
+            this.button_sqrt.Margin = new System.Windows.Forms.Padding(4);
             this.button_sqrt.Name = "button_sqrt";
-            this.button_sqrt.Size = new System.Drawing.Size(133, 119);
+            this.button_sqrt.Size = new System.Drawing.Size(66, 61);
             this.button_sqrt.TabIndex = 21;
             this.button_sqrt.TabStop = false;
             this.button_sqrt.Text = "²√x";
@@ -372,10 +375,10 @@ namespace Calculator
             this.button_log.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button_log.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_log.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
-            this.button_log.Location = new System.Drawing.Point(181, 427);
-            this.button_log.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.button_log.Location = new System.Drawing.Point(89, 249);
+            this.button_log.Margin = new System.Windows.Forms.Padding(4);
             this.button_log.Name = "button_log";
-            this.button_log.Size = new System.Drawing.Size(133, 119);
+            this.button_log.Size = new System.Drawing.Size(66, 61);
             this.button_log.TabIndex = 22;
             this.button_log.TabStop = false;
             this.button_log.Text = "log";
@@ -387,10 +390,10 @@ namespace Calculator
             this.button1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
-            this.button1.Location = new System.Drawing.Point(181, 293);
-            this.button1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.button1.Location = new System.Drawing.Point(89, 180);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 119);
+            this.button1.Size = new System.Drawing.Size(66, 61);
             this.button1.TabIndex = 23;
             this.button1.TabStop = false;
             this.button1.Text = "ʸ√x";
@@ -402,10 +405,10 @@ namespace Calculator
             this.button_factorial.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button_factorial.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_factorial.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
-            this.button_factorial.Location = new System.Drawing.Point(32, 427);
-            this.button_factorial.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.button_factorial.Location = new System.Drawing.Point(15, 249);
+            this.button_factorial.Margin = new System.Windows.Forms.Padding(4);
             this.button_factorial.Name = "button_factorial";
-            this.button_factorial.Size = new System.Drawing.Size(133, 119);
+            this.button_factorial.Size = new System.Drawing.Size(66, 61);
             this.button_factorial.TabIndex = 24;
             this.button_factorial.TabStop = false;
             this.button_factorial.Text = "!x";
@@ -417,24 +420,42 @@ namespace Calculator
             this.button_sign.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(190)))), ((int)(((byte)(88)))));
             this.button_sign.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_sign.Font = new System.Drawing.Font("Book Antiqua", 14.25F);
-            this.button_sign.Location = new System.Drawing.Point(32, 560);
-            this.button_sign.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.button_sign.Location = new System.Drawing.Point(15, 318);
+            this.button_sign.Margin = new System.Windows.Forms.Padding(4);
             this.button_sign.Name = "button_sign";
-            this.button_sign.Size = new System.Drawing.Size(283, 119);
+            this.button_sign.Size = new System.Drawing.Size(142, 61);
             this.button_sign.TabIndex = 25;
             this.button_sign.TabStop = false;
             this.button_sign.Text = "+/-";
             this.button_sign.UseVisualStyleBackColor = false;
             this.button_sign.Click += new System.EventHandler(this.button_sign_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(546, 28);
+            this.menuStrip1.TabIndex = 26;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(90, 24);
+            this.helpToolStripMenuItem.Text = "Nápoveda";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
+            // 
             // CalculatorGUI
             // 
             this.AcceptButton = this.button_equals;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(199)))), ((int)(((byte)(205)))));
             this.CancelButton = this.button_equals;
-            this.ClientSize = new System.Drawing.Size(1093, 708);
+            this.ClientSize = new System.Drawing.Size(546, 401);
             this.Controls.Add(this.button_sign);
             this.Controls.Add(this.button_factorial);
             this.Controls.Add(this.button1);
@@ -461,9 +482,11 @@ namespace Calculator
             this.Controls.Add(this.button_number9);
             this.Controls.Add(this.button_number8);
             this.Controls.Add(this.button_number7);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "CalculatorGUI";
             this.ShowIcon = false;
@@ -471,6 +494,8 @@ namespace Calculator
             this.Text = "Kalkulacka";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CalculatorGUI_KeyPress);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -504,5 +529,7 @@ namespace Calculator
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button_factorial;
         private System.Windows.Forms.Button button_sign;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
     }
 }
