@@ -151,8 +151,17 @@ namespace Calculator
                             result.Text = (value).ToString(); //Pretypovanie Double->String
                             break;
                         case "ʸ√x":
-                            value = MatLib.genroot(value, int.Parse(result.Text)); //Pretypovanie Integer->String
-                            result.Text = (value).ToString(); //Pretypovanie Double->String
+                            if (value >= 0)
+                            {
+                                value = MatLib.genroot(value, int.Parse(result.Text)); //Pretypovanie Integer->String
+                                result.Text = (value).ToString(); //Pretypovanie Double->String
+                            }
+                            else {
+                                result.Text = "Chyba";
+                                number_pressed = false;
+                                second_number_pressed = false;
+
+                            }
                             break;
                     }
                     value = 0; //Nulovanie vysledku a zabranenie duplicite pri viacnasobnej rovnakej operacii
@@ -225,9 +234,19 @@ namespace Calculator
                         result.Text = (value).ToString(); //Pretypovanie Double->String
                         break;
                     case "ʸ√x":
-                        value = MatLib.genroot(value, int.Parse(result.Text)); //Pretypovanie Integer->String
-                        result.Text = (value).ToString(); //Pretypovanie Double->String
-                        break;
+                        if (value > 0)
+                        {
+                            value = MatLib.genroot(value, int.Parse(result.Text)); //Pretypovanie Integer->String
+                            result.Text = (value).ToString(); //Pretypovanie Double->String
+                        }
+                        else
+                        {
+                            result.Text = "Chyba";
+                            number_pressed = false;
+                            second_number_pressed = false;
+
+                        }
+                            break;
                 }
             }
             value = 0; //Nulovanie vysledku a zabranenie duplicite pri viacnasobnej rovnakej operacii
@@ -335,10 +354,17 @@ namespace Calculator
 
         private void button_sqrt_Click(object sender, EventArgs e)
         {
-            if (result.Text != "Chyba")
-            {
-                value = MatLib.sqrt(Double.Parse(result.Text)); //Pretypovanie Double->String
-                result.Text = (value).ToString(); //Pretypovanie Double->String
+            if (Double.Parse(result.Text) >0) {
+                if (result.Text != "Chyba")
+                {
+                    value = MatLib.sqrt(Double.Parse(result.Text)); //Pretypovanie Double->String
+                    result.Text = (value).ToString(); //Pretypovanie Double->String
+                }
+            }
+            else {
+                result.Text = "Chyba";
+                number_pressed = false;
+                second_number_pressed = false;
             }
         }
 
