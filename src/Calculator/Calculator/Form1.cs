@@ -349,10 +349,19 @@ namespace Calculator
 
             if (Vysledok == true)
             {
-                if (result.Text != "Chyba")
+                if ((int.Parse(result.Text) >= 0) && (int.Parse(result.Text) <= 17))
                 {
-                    value = MatLib.factorial(int.Parse(result.Text)); //Pretypovanie int->String
-                    result.Text = (value).ToString(); //Pretypovanie Double->String
+                    if (result.Text != "Chyba")
+                    {
+                        value = MatLib.factorial(int.Parse(result.Text)); //Pretypovanie int->String
+                        result.Text = (value).ToString(); //Pretypovanie Double->String
+                    }
+                }
+                else
+                {
+                    result.Text = "Chyba";
+                    number_pressed = false;
+                    second_number_pressed = false;
                 }
             }
             else 
@@ -395,5 +404,6 @@ namespace Calculator
             result.Text = "0";
         }
     }
+
   
 }
