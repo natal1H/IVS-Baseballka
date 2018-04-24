@@ -743,7 +743,7 @@ WARN_LOGFILE           =
 # spaces.
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = Calculator/Calculator/MatLib.cs Calculator/Calculator/Form1.cs Calculator/Calculator/Program.cs Calculator/Calculator/Form1.Designer.cs CalculatorMockup/CalculatorMockup/Form1.cs CalculatorMockup/CalculatorMockup/Form2.cs CalculatorMockup/CalculatorMockup/Form3.cs CalculatorMockup/CalculatorMockup/Form4.cs CalculatorMockup/CalculatorMockup/Form1.Designer.cs CalculatorMockup/CalculatorMockup/Form2.Designer.cs CalculatorMockup/CalculatorMockup/Form3.Designer.cs CalculatorMockup/CalculatorMockup/Form4.Designer.cs StandartDeviation/StandartDeviation/MatLib.cs StandartDeviation/StandartDeviation/Program.cs Tests/MatLibTest.cs
+INPUT                  = Calculator/Calculator/MatLib.cs Calculator/Calculator/Form1.cs Calculator/Calculator/Program.cs Calculator/Calculator/Form1.Designer.cs CalculatorMockup/CalculatorMockup/Form1.cs CalculatorMockup/CalculatorMockup/Form2.cs CalculatorMockup/CalculatorMockup/Form3.cs CalculatorMockup/CalculatorMockup/Form4.cs CalculatorMockup/CalculatorMockup/Form1.Designer.cs CalculatorMockup/CalculatorMockup/Form2.Designer.cs CalculatorMockup/CalculatorMockup/Form3.Designer.cs CalculatorMockup/CalculatorMockup/Form4.Designer.cs StandartDeviation/StandartDeviation/MatLib.cs StandartDeviation/StandartDeviation/Program.cs Tests/MatLibTest.cs Calculator/Calculator/Form2.cs Calculator/Calculator/Form2.Designer.cs
  
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses
