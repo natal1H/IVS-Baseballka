@@ -234,7 +234,7 @@ namespace Calculator
                         result.Text = (value).ToString(); //Pretypovanie Double->String
                         break;
                     case "ʸ√x":
-                        if (value > 0)
+                        if (value >= 0)
                         {
                             value = MatLib.genroot(value, int.Parse(result.Text)); //Pretypovanie Integer->String
                             result.Text = (value).ToString(); //Pretypovanie Double->String
@@ -354,7 +354,7 @@ namespace Calculator
 
         private void button_sqrt_Click(object sender, EventArgs e)
         {
-            if (Double.Parse(result.Text) >0) {
+            if (Double.Parse(result.Text) >= 0) {
                 if (result.Text != "Chyba")
                 {
                     value = MatLib.sqrt(Double.Parse(result.Text)); //Pretypovanie Double->String
